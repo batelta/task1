@@ -1,0 +1,99 @@
+html{
+  scroll-behavior: smooth;}
+body{ background-color: rgb(80,118,176);
+    background-color:#a3b4c8;
+    background-color:#DCBFFF ;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font:bold;
+font-style: oblique;
+}
+h1{font-size:200% ;}
+h2{font-size: 150%;}
+#happy{background-color:rgb(80,134,193);
+    background-color: #F5F5F5;
+    text-align: center;
+font-size: 150%;}
+#food{background-color: rgb(138,164,255);text-align: center;
+font-size: 110%;
+}
+#health{background-color:rgb(179, 181, 247);
+    background-color:#9f496e;
+    background-color:#e3dcd2;
+    background-color:#4B6D90;
+font-weight: bold;text-align: center;
+}
+#brain{background-color: rgb(73,89,140);text-align: center;
+font-size: 140%;}
+
+#food img{position:sticky;
+top:70px;}
+
+.section{display: flex;
+flex-direction: row;
+  justify-content: center;
+  vertical-align:middle;
+  position: relative;
+}
+.section div{padding-top: 70px;
+padding-bottom: 70px;}
+.section img{ width:500px ;
+    height:400px ;
+    /*padding-top: 70px;
+    padding-bottom: 70px;*/
+    text-align: left;
+    margin-top: 70px;
+    margin-bottom: 70px;
+    margin-right:10px;
+    box-shadow:2px 2px 10px #2b262d;
+}
+
+.card{
+    text-align: center;
+    font-style: oblique;
+    width: 200px;
+    height: 320px;
+    margin: 17px;
+    padding: 30px;
+    box-shadow:2px 2px 10px black;
+    background-color: rgb(62,71,111);
+    background-color:#2b262d;
+    background-color:#647295;
+    background-color:#f2ebe5;
+    background-color:#85AED0;
+    border: 1px solid #DCBFFF;
+    border-radius:10px;
+    transition: transform 0.5s;}
+    .card img {
+        width: 100%;
+        height: 180px;
+        }
+.cards{display: flex;
+flex-direction:row;
+flex-wrap:wrap;
+}
+.end {
+    background-image:url(https://blueberry.org/wp-content/uploads/2021/04/Fresh-Highbush-Blueberries-in-Heart-Dish.jpg) ;
+    background-position: center center;
+    background-size: cover; text-align: center;
+    padding:20%
+}
+.end ul{list-style-type:none;
+}
+
+.links{ color:black;
+}
+
+  .links a:link, a:visited {
+    background-color:rgb(50, 50, 135);
+    background-color:#2b262d;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  .links a:hover, a:active {
+    background-color: rgb(137, 152, 241);
+  }
+  
