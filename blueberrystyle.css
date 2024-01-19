@@ -14,14 +14,15 @@ padding:20px;
 }
 header p{padding-top: 30px;}
 h1{font-size:200% ;
-  font-family: 'Lucida Handwriting', Cursive;}
+  font-family: 'Handlee', cursive;}
 h2{
-  font-family: 'Lucida Handwriting', Cursive;}
+  font-size: 180%;
+  font-family: 'Handlee', cursive;}
 
  a:hover{ background-color: rgb(121, 131, 177);}
-a:link{
-  color:#CACEDA;}
+
 body p,nav{font-size: 150%;}
+
 .list{
 display: flex;
 gap:40px;
@@ -35,6 +36,7 @@ padding-top: 90px;
   box-shadow:3px 3px 3px 4px #0e0424;
   border-radius: 40px;
 }
+
 .section{display: flex;
   flex-direction: row;
    justify-content: center;
@@ -53,7 +55,7 @@ padding-top: 90px;
  }
  .section h2{background-color: #0e0424;
   color:#CACEDA ;
-font-size: 150%;}
+}
 .section div{font-size: 90%;}
 #happy{
     background-color: #6F7F9B;
