@@ -1,0 +1,47 @@
+
+  @media screen and (max-width: 700px) {
+    .hideonmobile{display: none;}
+    .menuicon{display: flex;}
+    .logo {display: none;}
+  
+    #homepage {
+     gap:20px;
+    }
+    
+   .project{
+    flex-direction: column;
+   }
+
+    .title {
+      font-size: 2rem;
+    }
+    .experience{
+      flex-direction: column;
+      height: 600px;
+    }
+    .education{
+      margin-left:40px;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+ .about-right{
+  height:800px;
+ }
+
+}
+@media screen and (min-width: 992px){
+  .about-wrapper{
+      display: grid;
+      grid-template-columns: repeat(2, 2fr);
+  }
+
+  .about-left{
+      position: relative;
+  }
+  .about-left-content{
+      position: absolute;
+      width:80%
+  
+  }
+}

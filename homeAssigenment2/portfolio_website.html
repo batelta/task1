@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./portfoliostyle.css"/>
+   <link rel="stylesheet" href="./mediaqueries.css"/>
+</head>
+<body>
+    <nav id="menu">
+    <div class="logo"><a href="./portfolio_website.html" class="active">Batel Tasama</a></div>
+    <div>
+        <ul class="menu_links">
+            <li class="hideonmobile"><a href="./aboutpage.html">About</a></li>
+            <li class="hideonmobile"><a href="./skillspage.html">Skills</a></li>
+            <li class="hideonmobile"><a href="./projectspage.html">Projects</a></li>
+            <li class="menuicon" onclick=showmobilemenu()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+        </ul>
+    </div>
+</nav>
+<nav id="mobile_nav">
+    <div class="mobile_menu"> 
+        <div class="mobilelogo"><a href="./portfolio_website.html" class="active">Batel Tasama</a></div>
+            <ul class="mobile_links">
+                <li class="colseicon" onclick=hidemobilemenu()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li><a href="./aboutpage.html">About </a></li>
+            <li><a href="./skillspage.html">Skills</a></li>
+            <li><a href="./projectspage.html" >Projects</a></li>
+        </ul>
+    </div>
+</nav>
+<section id="homepage">
+
+    <div class="piccontainer">
+       <img src="./mypic/pink.jpeg" alt="my picture">
+   </div>
+ <div class="homepagetext">
+       <p class="homepagep1">Hey 👋🏽 I'm</p>
+       <h1 class="title"><div class="typing">Batel Tasama</div></h1>
+       <p>Industrial Engineer(to be)</p>
+   <div id="socials">
+       <img src="./mypic/linkedin.png" alt="linkedin page" 
+       class="png" onclick="location.href='https://www.linkedin.com/in/batel-tasama-830b45270'">
+       <img src="./mypic/github.png" alt="github page"
+       class="png" onclick="location.href='https://github.com/batelta'">
+       <img src="./mypic/152552-black-gmail-hq-image-free.png" alt="Email icon"
+       class="png" onclick="location.href='mailto:bateltasama3@gmail.com'">
+   </div>
+   </div>
+</section>
+ <script src="/homeAssigenment2/myportfolio.js"></script>
+</body>
+</html>
