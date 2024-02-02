@@ -23,19 +23,43 @@
   }
   .piccontainer img{
 width:200px;
-height: 200px;  }
+height: 200px;  
+}
     .title {
       font-size: 2rem;
+    margin-left: -26px;
     }
+    .skilltitle {
+      margin-left: -10px;
+  }
+  .skillbars {
+    margin: 40px -60px;
+  }
     .experience{
       flex-direction: column;
-      height: 600px;
+    height: 750px;
+    width: fit-content;
+    margin: 44px -60px;
     }
     .education{
       margin-left:40px;
     }
+    .jobs h2 {
+      padding-left: 23px;
   }
-
+  .education {
+    margin-left: 35px;
+}
+.education h2 {
+  padding-left: 0px;
+}
+.section__text__p1 {
+  margin-left: -5px;
+  }
+  .color-container {
+  margin: 15px -100px;
+}
+}
   @media screen and (max-width: 500px) {
  .about-right{
   height:800px;
