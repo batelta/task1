@@ -7,7 +7,20 @@
     .hideonmobile{display: none;}
     .menuicon{display: flex;}
     .logo {display: none;}
-
+  
+    #homepage {
+     flex-direction: column;
+     height:70vh;
+    }
+  .piccontainer{
+    width: 175px;
+    position: static;
+    height: 100px;
+    margin-left: -38px;
+  }
+  .piccontainer img{
+width:200px;
+height: 200px;  }
     .title {
       font-size: 2rem;
     }
