@@ -12,6 +12,9 @@
      flex-direction: column;
      height:70vh;
     }
+    #menu{
+      z-index: 800px;
+    }
   .piccontainer{
     width: 175px;
     position: static;
