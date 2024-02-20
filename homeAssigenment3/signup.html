@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="./signup.css" rel="stylesheet">
+    <script src="./main.js"></script>
+  </head>
+  <body>
+    
+    <!-- צרו טופס יצירת אורח חדש -->
+    <div class="wrapper">
+    <form id="create-visitor-form">
+      <h1>Sign up</h1>
+      <div class="input-box">
+        <input type="text" placeholder="Full name" required id="visitorname" name="name">
+        <i class='bx bxs-user'></i>
+      </div>
+      
+        <br><br>
+        <div class="input-box">
+          <input type="number" id="age" name="age" placeholder="Age" min="14" max="70">
+          <i class='bx bxs-lock-alt' ></i>
+        </div>
+       
+        <br><br>
+        <div class="input-box">
+         <input type="email" id="email" name="email" placeholder="Email" required>
+          <i class='bx bxs-lock-alt' ></i>
+        </div>
+        
+        
+        <br><br>
+        <div class="remember-forgot">
+          <input type="radio" id="male" name="gender" value="male" />
+          <label for="male">Male</label><br />
+          <input type="radio" id="female" name="gender" value="female" />
+          <label for="female">Female</label><br /><br />
+        </div>
+        
+        <input type="submit" value="submit" class="btn">
+        </form>
+      </div>
+        
+    <!-- לאחר יצירה, הוסיפו אותו למערך האורחים ושמרו את מערך האורחים המעודכן בלוקל סטורג' -->
+    <!-- עברו לעמוד התחברות כדי לבחור את האורח שאיתו תכנסו לגן החיות -->
+    <!-- ממשו את הלוגיקה של היצירה, בפונקציה שהוגדרה מראש בקובץ signup.js -->
+    <script src="./signup.js"></script>
+  </body>
+</html>
