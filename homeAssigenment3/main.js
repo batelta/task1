@@ -3,86 +3,105 @@ function generateDataset() {
       {
         name: "John Smith",
         coins: 50,
-        
+        image:"https://www.svgrepo.com/show/382105/male-avatar-boy-face-man-user-5.svg"
       },
       {
         name: "Emily Johnson",
         coins: 50,
+        image:"https://www.svgrepo.com/show/382100/female-avatar-girl-face-woman-user-7.svg"
       },
       {
         name: "Michael Williams",
         coins: 50,
+        image:"https://www.svgrepo.com/show/382105/male-avatar-boy-face-man-user-5.svg"
       },
       {
         name: "Jessica Brown",
         coins: 50,
+        image:"https://www.svgrepo.com/show/382100/female-avatar-girl-face-woman-user-7.svg"
       },
       {
         name: "Christopher Jones",
         coins: 50,
+        image:"https://www.svgrepo.com/show/382105/male-avatar-boy-face-man-user-5.svg"
       },
       {
         name: "Ashley Davis",
         coins: 50,
+        image:"https://www.svgrepo.com/show/382100/female-avatar-girl-face-woman-user-7.svg"
       },
       {
         name: "Matthew Miller",
         coins: 50,
+        image:"https://www.svgrepo.com/show/382105/male-avatar-boy-face-man-user-5.svg"
       },
       {
         name: "Amanda Wilson",
         coins: 50,
+        image:"https://www.svgrepo.com/show/382100/female-avatar-girl-face-woman-user-7.svg"
       },
       {
         name: "David Moore",
         coins: 50,
+        image:"https://www.svgrepo.com/show/382105/male-avatar-boy-face-man-user-5.svg"
       },
       {
         name: "Sarah Taylor",
         coins: 50,
+        image:"https://www.svgrepo.com/show/382100/female-avatar-girl-face-woman-user-7.svg"
       },
       {
         name: "James Anderson",
         coins: 50,
+        image:"https://www.svgrepo.com/show/382105/male-avatar-boy-face-man-user-5.svg"
       },
       {
         name: "Jennifer Thomas",
         coins: 50,
+        image:"https://www.svgrepo.com/show/382100/female-avatar-girl-face-woman-user-7.svg"
       },
       {
         name: "Robert Jackson",
         coins: 50,
+        image:"https://www.svgrepo.com/show/382105/male-avatar-boy-face-man-user-5.svg"
       },
       {
         name: "Elizabeth White",
         coins: 50,
+        image:"https://www.svgrepo.com/show/382100/female-avatar-girl-face-woman-user-7.svg"
       },
       {
         name: "Daniel Harris",
         coins: 50,
+        image:"https://www.svgrepo.com/show/382105/male-avatar-boy-face-man-user-5.svg"
       },
       {
         name: "Melissa Martin",
         coins: 50,
+        image:"https://www.svgrepo.com/show/382100/female-avatar-girl-face-woman-user-7.svg"
       },
       {
         name: "William Thompson",
         coins: 50,
+        image:"https://www.svgrepo.com/show/382105/male-avatar-boy-face-man-user-5.svg"
       },
       {
         name: "Linda Garcia",
         coins: 50,
+        image:"https://www.svgrepo.com/show/382100/female-avatar-girl-face-woman-user-7.svg"
       },
       {
         name: "Joseph Martinez",
         coins: 50,
+        image:"https://www.svgrepo.com/show/382105/male-avatar-boy-face-man-user-5.svg"
       },
       {
         name: "Karen Robinson",
         coins: 50,
+        image:"https://www.svgrepo.com/show/382100/female-avatar-girl-face-woman-user-7.svg"
       },
     ];
-  
+    localStorage.setItem("visitors", JSON.stringify(visitors));
     let animals = [
       {
         name: "Lion",
@@ -171,8 +190,13 @@ function generateDataset() {
   
     console.log(visitors);
   }
-  
+
+
+
   generateDataset();
+
+ 
+  
   function logout() {
     //ממשו את הלוגיקה שמתנתקת מאורח מחובר
     // שימו לב לנקות את השדה המתאים בלוקל סטורג'

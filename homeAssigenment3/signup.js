@@ -1,27 +1,76 @@
 /*   מקבל שם, בודק שאין אותו כבר במערך האורחים ומחזיר אובייקט אורח
 /** */  
 
-const makeVisitor = (visitors, name) => {
+const makeVisitor = (visitors, name,image) => {
   let foundVisitor = visitors.find((visitor) => visitor.name === name);
-  console.log(foundVisitor);
+  console.log(foundVisitor); //בדיקה לעצמי , למחוק בסוף 
   if (!foundVisitor) {
-      let newVisitor = { name: name, coins: 50 } // Use name parameter here
-      console.log(newVisitor)
+      let newVisitor = { name: name, coins: 50 ,image:image} // Use name parameter here
+      console.log(newVisitor)//בדיקה לעצמי , למחוק בסוף 
+      console.log(selectedimg);//בדיקה לעצמי , למחוק בסוף 
       visitors.push(newVisitor);
+      
+      localStorage.setItem('visitors', JSON.stringify(visitors));//שומרת אותו באחסון המקומי
+      const storedVisitors = JSON.parse(localStorage.getItem('visitors'));
+      console.log(storedVisitors)
   }
+  else {
+    alert('user already exist! redirecting to login page..')
+  }
+  redirectToLogin();
 };
+
 function createNewVisitor(event) {
   event.preventDefault();
-  console.log('hey');
+  console.log('hey');//גם כן בדיקה
   const visitorName = document.querySelector("#visitorname").value; // Get visitor name from input field
-  makeVisitor(visitors, visitorName); // Pass visitors array and visitor name to makeVisitor
-}
-document.querySelectorAll('[name="gender"]').forEach((radio) => {
-  radio.addEventListener("change", function (event) {
-    
-    console.log("Selected Gender:", event.target.value);
+  
+  let selectedgender;
+  document.querySelectorAll('[name="gender"]').forEach((radio) => {
+    radio.addEventListener("change", function (event) {
+    selectedgender = event.target.value;
+    });
   });
-});
+  if (selectedgender === "Male") {
+    selectedimg = "https://www.svgrepo.com/show/382105/male-avatar-boy-face-man-user-5.svg";
+} else {
+    selectedimg = "https://www.svgrepo.com/show/382100/female-avatar-girl-face-woman-user-7.svg";
+}
+
+  makeVisitor(visitors, visitorName,selectedimg); // Pass visitors array and visitor name and gender to makeVisitor
+
+}
+
+
+function redirectToLogin() {
+  let validation=validateForm();
+  if(validation===true)
+  window.location.href = "./login.html";
+else clearcontent();
+}
+
+function validateForm() {
+  const name = document.getElementById('visitorname').value;
+  const age = document.getElementById('age').value;
+  const email = document.getElementById('email').value;
+  const gender = document.querySelector('input[name="gender"]:checked');
+
+  if (name.trim() === '' || age.trim() === '' || email.trim() === '' || !gender) {
+      alert('Please fill out all the fields and select a gender.');
+      return false; // Prevent form submission
+  }
+  // Form is valid, allow submission
+  return true;
+}
+
+function clearcontent(){
+  document.getElementById('visitorname').value='';
+  document.getElementById('age').value='';
+  document.getElementById('email').value='';
+}
+ // בודק האם האינפוטים קיימים ויש בהם ערך
+//  מחזיר האם תקין או לא (בוליאני)
+
 function setAvatarimg(){
 
 }

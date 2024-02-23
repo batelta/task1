@@ -1,0 +1,48 @@
+body {
+    background-image:url() ;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 90px 150px;
+  }
+  
+  #placeholder {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+
+
+.visitors-card {
+    max-width: 250px;
+    max-height: 100px;
+    overflow: hidden;
+    background: white;
+    border-radius: 20px;
+    animation: fade-in 0.4s ease-in forwards;
+  
+  }
+  
+
+  .visitors-card p {
+    text-align: center;
+    padding: 2px 6px;
+  }
+   
+  .visitor-card img {
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    max-height: 100px;
+    margin: 0 auto;
+    max-width: 150px;
+  }
+
+  .card-text img{
+    max-height: 30px;
+    max-width: 30px;
+  }
