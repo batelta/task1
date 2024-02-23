@@ -21,3 +21,18 @@ function renderAvailableAnimals() {
     // ודאו כי אתם שומרים את הפילטרים שהיוזר בחר בלוקל סטורג׳ וטוענים אותם בהתאם
     // רנדרו רק את החיות שעומדות בתנאים של הפילטרים
   }
+  const visitors = JSON.parse(localStorage.getItem('visitors'));
+  console.log(visitors)
+  visitors.forEach(function(visitor){
+let o=document.createElement("option");
+o.text='Name:'+visitor.name+' ,Coins:'+visitor.coins;
+o.value=visitor;
+ players.appendChild(o);
+  });
+  const reset=()=>localStorage.clear();
+
+  // Retrieve the player data from local storage
+const playerData = JSON.parse(localStorage.getItem('player'));
+
+// Set the content of the element with the class "chosenplayer"
+document.querySelector(".chosenplayer").textContent = playerData.name+' '+playerData.coins;

@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.wrapper {
+    width: 100%;
+    min-height: 11vh;
+    background: #ddeef7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+  }
+  .navbar {
+    background: #fdfdfd;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px 15px;
+    box-shadow: 0px 20px 40px rgba(18, 34, 64, 0.1);
+  gap:30px;
+    position: relative;
+  } 
+ #players{
+    width:min-content;
+ }   
+ #resetbutton{
+    
+        background: none;
+        border: 2px solid;
+        font: inherit;
+        line-height: 1;
+        margin: 0.5em;
+        padding: 1em 2em;
+            box-shadow: 
+              0.3em 0.3em 0 0 black,
+              inset 0.3em 0.3em 0 0 black;
+  }
+ 
+.chosenplayer {
+margin-left: 0px;
+}

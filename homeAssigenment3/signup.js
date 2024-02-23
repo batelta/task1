@@ -11,10 +11,15 @@ const makeVisitor = (visitors, name,image) => {
       
       localStorage.setItem('visitors', JSON.stringify(visitors));//שומרת אותו באחסון המקומי
       const storedVisitors = JSON.parse(localStorage.getItem('visitors'));
-      console.log(storedVisitors)
+      console.log(storedVisitors);
+
+      localStorage.setItem('player', JSON.stringify(visitorName));//שומרת אותו באחסון המקומי
+  const chosenplayer = JSON.parse(localStorage.getItem('player'));
+  console.log(chosenplayer)
   }
   else {
     alert('user already exist! redirecting to login page..')
+    
   }
  redirectToLogin();
 };
@@ -42,10 +47,10 @@ else clearcontent();
 }
 
 function redirectToLogin() {
-  let validation=validateForm();
-  if(validation===true)
+ // let validation=validateForm();
+ // if(validation===true)
   window.location.href = "./login.html";
-else clearcontent();
+//else clearcontent();
 }
 
 function validateForm() {
