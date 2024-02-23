@@ -1,6 +1,10 @@
 function loginAsVisitor(visitorName) {
   // תממשו את הלוגיקה של בחירת אורח שנכנס לגן החיות
   // שמרו את האורח שבחרתם, בלוקל סטורג' כך שבכל העמודים נדע מי האורח הנוכחי
+ 
+  localStorage.setItem('player', JSON.stringify(visitorName));//שומרת אותו באחסון המקומי
+  const storedVisitors = JSON.parse(localStorage.getItem('player'));
+  console.log(storedVisitors)
 }
 
 
@@ -30,9 +34,21 @@ const getVisitorsHTMLCard = (visitor) => {  //התבנית שבה נוכל לר�
         closeButton.addEventListener("click", () => dialog.close());
         return closeButton;
       };
+      const getselectuserModalHTMLButton=(visitor)=>{
+        const chooseButton=document.createElement("button");
+        chooseButton.innerText="Choose";
+        chooseButton.addEventListener("click",()=>redirectToZoo(visitor));
+        return chooseButton;
+      }
+      function redirectToZoo(visitor){
+        const chosenPlayer={name:visitor.name,coins:visitor.coins}
+        console.log(chosenPlayer);
+        loginAsVisitor(chosenPlayer);
+        window.location.href = "./zoo.html";
+      }
       const handleVisitorsClick = (visitor) => {
         dialog.innerHTML = "";
-        dialog.append(getCloseModalHTMLButton(), getVisitorsHTMLCard(visitor));
+        dialog.append(getCloseModalHTMLButton(),getselectuserModalHTMLButton(visitor), getVisitorsHTMLCard(visitor));
         dialog.showModal();
       };
 
@@ -57,8 +73,8 @@ const getVisitorsHTMLCard = (visitor) => {  //התבנית שבה נוכל לר�
         templateWrapper.className = "empty-result";
       
         const template = `
-          <h2>No Products Found</h2>
-          <p>We're sorry, but no products match your search or filter criteria.</p>
+          <h2>User Not Found</h2>
+          <p>We're sorry, we dont have a user with that name</p>
           <button id="clear-filter-btn" class="btn btn-dark">Clear search text</button>
           `;
         templateWrapper.innerHTML = template;

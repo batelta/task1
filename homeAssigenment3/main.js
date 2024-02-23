@@ -101,7 +101,7 @@ function generateDataset() {
         image:"https://www.svgrepo.com/show/382100/female-avatar-girl-face-woman-user-7.svg"
       },
     ];
-    localStorage.setItem("visitors", JSON.stringify(visitors));
+
     let animals = [
       {
         name: "Lion",

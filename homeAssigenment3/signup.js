@@ -1,13 +1,12 @@
 /*   מקבל שם, בודק שאין אותו כבר במערך האורחים ומחזיר אובייקט אורח
 /** */  
-
 const makeVisitor = (visitors, name,image) => {
   let foundVisitor = visitors.find((visitor) => visitor.name === name);
   console.log(foundVisitor); //בדיקה לעצמי , למחוק בסוף 
   if (!foundVisitor) {
       let newVisitor = { name: name, coins: 50 ,image:image} // Use name parameter here
       console.log(newVisitor)//בדיקה לעצמי , למחוק בסוף 
-      console.log(selectedimg);//בדיקה לעצמי , למחוק בסוף 
+     
       visitors.push(newVisitor);
       
       localStorage.setItem('visitors', JSON.stringify(visitors));//שומרת אותו באחסון המקומי
@@ -17,30 +16,30 @@ const makeVisitor = (visitors, name,image) => {
   else {
     alert('user already exist! redirecting to login page..')
   }
-  redirectToLogin();
+ redirectToLogin();
 };
 
 function createNewVisitor(event) {
   event.preventDefault();
   console.log('hey');//גם כן בדיקה
+  let validation=validateForm();
+  if(validation===true){
   const visitorName = document.querySelector("#visitorname").value; // Get visitor name from input field
   
-  let selectedgender;
-  document.querySelectorAll('[name="gender"]').forEach((radio) => {
-    radio.addEventListener("change", function (event) {
-    selectedgender = event.target.value;
-    });
-  });
-  if (selectedgender === "Male") {
-    selectedimg = "https://www.svgrepo.com/show/382105/male-avatar-boy-face-man-user-5.svg";
-} else {
-    selectedimg = "https://www.svgrepo.com/show/382100/female-avatar-girl-face-woman-user-7.svg";
-}
 
+  let selectedgender = document.querySelector('input[name="gender"]:checked').value;
+
+  let selectedimg;
+  if (selectedgender === "male") 
+    selectedimg = "https://www.svgrepo.com/show/382105/male-avatar-boy-face-man-user-5.svg";
+   else 
+    selectedimg = "https://www.svgrepo.com/show/382100/female-avatar-girl-face-woman-user-7.svg";
+    console.log(selectedimg);//בדיקה לעצמי , למחוק בסוף 
   makeVisitor(visitors, visitorName,selectedimg); // Pass visitors array and visitor name and gender to makeVisitor
 
 }
-
+else clearcontent();
+}
 
 function redirectToLogin() {
   let validation=validateForm();
