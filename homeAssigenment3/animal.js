@@ -11,10 +11,12 @@ function renderAnimal() {
   function feedAnimal() {
     // ממשו את הלוגיקה של האכלת חיה
     // במידה ואין מספיק מטבעות, טפלו בהתאם להנחיות במטלה
+    
   }
   
   function visitorGotEaten() {
     // ממשו את הלוגיקה של חיה שטורפת אורח
+    
   }
   
   function animalEscaped() {

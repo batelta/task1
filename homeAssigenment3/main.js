@@ -102,7 +102,7 @@ function generateDataset() {
       },
     ];
 
-    let animals = [
+    window.animals = [
       {
         name: "Lion",
         isPredator: true,
@@ -110,6 +110,7 @@ function generateDataset() {
         height: 120,
         color: "brown",
         habitat: "land",
+        image:"https://static.vecteezy.com/system/resources/previews/005/112/698/original/cute-lion-cartoon-lying-down-free-vector.jpg"
       },
       {
         name: "Elephant",
@@ -118,6 +119,7 @@ function generateDataset() {
         height: 200,
         color: "grey",
         habitat: "land",
+        image:"https://t4.ftcdn.net/jpg/00/63/25/87/360_F_63258772_2MCf7bx50H6fKQNiMS9mzDfVw1oJykmr.jpg"
       },
       {
         name: "Giraffe",
@@ -126,6 +128,7 @@ function generateDataset() {
         height: 120,
         color: "brown",
         habitat: "land",
+        image:"https://t3.ftcdn.net/jpg/00/95/46/88/360_F_95468841_5Sf97aPXpawo9WvR0AoOSiK9fjlRIwHE.jpg"
       },
       {
         name: "Tiger",
@@ -134,6 +137,7 @@ function generateDataset() {
         height: 120,
         color: "brown",
         habitat: "land",
+        image:"https://media.istockphoto.com/id/1084217224/vector/cartoon-cute-tiger-vector-illustration-of-funny-happy-animal.jpg?s=612x612&w=0&k=20&c=XSwwExCdqirug9PLBe5tvzC1bWAc4NDVCZjmUd3cPnA="
       },
       {
         name: "Monkey",
@@ -142,6 +146,7 @@ function generateDataset() {
         height: 120,
         color: "brown",
         habitat: "land",
+        image:"https://img.freepik.com/premium-vector/cute-monkey-cartoon_146562-7.jpg"
       },
       {
         name: "Kangaroo",
@@ -150,6 +155,7 @@ function generateDataset() {
         height: 120,
         color: "brown",
         habitat: "land",
+        image:"https://t4.ftcdn.net/jpg/02/53/43/21/360_F_253432125_jIvEA2B5WKVN1ndlmoJnsof15900M5bv.jpg"
       },
       {
         name: "Penguin",
@@ -158,6 +164,7 @@ function generateDataset() {
         height: 120,
         color: "brown",
         habitat: "sea",
+        image:"https://t4.ftcdn.net/jpg/01/28/53/89/360_F_128538937_mrePXaBf9rNNr507Iij35gLkuSqEuXdW.jpg"
       },
       {
         name: "Zebra",
@@ -166,6 +173,7 @@ function generateDataset() {
         height: 120,
         color: "brown",
         habitat: "land",
+        image:"https://i.pinimg.com/736x/59/c3/5b/59c35bc73af7141e10efbc8028637212.jpg"
       },
       {
         name: "Cheetah",
@@ -174,6 +182,7 @@ function generateDataset() {
         height: 120,
         color: "brown",
         habitat: "land",
+        image:"https://t3.ftcdn.net/jpg/01/19/87/22/360_F_119872213_dVauWvVOkfqiVrSjG9SULNoX6cyihMtA.jpg"
       },
     ];
   

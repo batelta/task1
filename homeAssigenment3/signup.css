@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -13,6 +14,7 @@
     min-height: 100vh;
     background-image: url(https://img.freepik.com/premium-vector/zoo-cartoon-illustration-with-safari-animals-forest-background_2175-4776.jpg);
     background: url(https://cdn2.vectorstock.com/i/1000x1000/60/91/zoo-entrance-gates-cartoon-with-safari-animals-vector-38946091.jpg) no-repeat;
+    background: url(./zooimage.jpg) no-repeat;
     background-position: center center;
     background-size: cover;   
  
@@ -20,12 +22,12 @@
   .wrapper{
     width: 420px;
     background: transparent;
-    background-color: rgb(0 0 0 / 50%);
+    background-color: rgb(0 0 0 / 20%);
     border: 2px solid rgba(255, 255, 255, .2);
     backdrop-filter: blur(9px);
     color: black;
     border-radius: 12px;
-    padding: 30px 40px;
+    padding: 0px 20px;
   }
   .wrapper h1{
     font-size: 36px;
@@ -66,6 +68,7 @@
     justify-content: space-between;
     font-size: 14.5px;
     margin: -15px 0 15px;
+    align-items: center;
   }
   .remember-forgot label input{
     accent-color: #fff;

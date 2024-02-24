@@ -5,13 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Animal</title>
+    <link href="./animal.css" rel="stylesheet">
+    <link href="./zoo.css" rel="stylesheet">
     <script src="./main.js"></script>
   </head>
   <body>
+    <div class="wrapper">
+      <div class="navbar">
+    <select id="players">
+      <option value="Choose one">All players</option>
+    </select>
+    <btn id="resetbutton" class="btn" onclick="reset()"> Reset all settings</btn>
+   <div class="chosenplayer"></div>
+      </div></div>
     <div>
-      <div id="image">
         <!-- show here the animal image -->
-      </div>
       <div>
         <h1 id="name"></h1>
         <p id="weight"></p>
@@ -19,10 +27,12 @@
         <p id="color"></p>
         <p id="habitat"></p>
         <p id="isPredator"></p>
-        <button id="feed-animal">Feed me</button>
+        <button id="feed-animal" onclick="feedAnimal()">Feed me</button>
       </div>
     </div>
     <div id="related-animals"></div>
     <script src="./animal.js"></script>
+    <script src="./zoo.js"></script>
+
   </body>
 </html>

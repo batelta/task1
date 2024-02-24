@@ -1,7 +1,7 @@
 function loginAsVisitor(visitorName) {
   // תממשו את הלוגיקה של בחירת אורח שנכנס לגן החיות
   // שמרו את האורח שבחרתם, בלוקל סטורג' כך שבכל העמודים נדע מי האורח הנוכחי
- 
+
   localStorage.setItem('player', JSON.stringify(visitorName));//שומרת אותו באחסון המקומי
   const storedVisitors = JSON.parse(localStorage.getItem('player'));
   console.log(storedVisitors)
@@ -13,7 +13,7 @@ const dialog = document.querySelector("#visitors-dialog");
 
 const getVisitorsHTMLCard = (visitor) => {  //התבנית שבה נוכל לראות את הפרטים עבור כל משתמש 
     const template = `
-        <div class="card" style="min-height: 360px;" >
+        <div class="card" style="min-height:250px;" >
           <img class="visitor-card" src="${visitor.image}" alt="${visitor.name}"/>
           <div class="card-body">
             <p class="card-text">${visitor.name}</p>
@@ -41,7 +41,7 @@ const getVisitorsHTMLCard = (visitor) => {  //התבנית שבה נוכל לר�
         return chooseButton;
       }
       function redirectToZoo(visitor){
-        const chosenPlayer={name:visitor.name,coins:visitor.coins}
+        const chosenPlayer={name:visitor.name,coins:visitor.coins,image:visitor.image}
         console.log(chosenPlayer);
         loginAsVisitor(chosenPlayer);
         window.location.href = "./zoo.html";

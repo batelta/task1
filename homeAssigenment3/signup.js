@@ -9,13 +9,13 @@ const makeVisitor = (visitors, name,image) => {
      
       visitors.push(newVisitor);
       
-      localStorage.setItem('visitors', JSON.stringify(visitors));//שומרת אותו באחסון המקומי
+      localStorage.setItem('visitors', JSON.stringify(visitors));//שומרת אותו במערך באחסון המקומי
       const storedVisitors = JSON.parse(localStorage.getItem('visitors'));
       console.log(storedVisitors);
 
-      localStorage.setItem('player', JSON.stringify(visitorName));//שומרת אותו באחסון המקומי
+      localStorage.setItem('player', JSON.stringify(newVisitor));// שומרת אותו באחסון המקומי בתור שחקן נוכחי
   const chosenplayer = JSON.parse(localStorage.getItem('player'));
-  console.log(chosenplayer)
+  console.log(chosenplayer)//בדיקה 
   }
   else {
     alert('user already exist! redirecting to login page..')
