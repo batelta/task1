@@ -18,21 +18,32 @@
     <btn id="resetbutton" class="btn" onclick="reset()"> Reset all settings</btn>
    <div class="chosenplayer"></div>
       </div></div>
-    <div>
+      
+    <div class="animalpic">
+      <img id="animal-image" src="" alt="Animal Image">
         <!-- show here the animal image -->
-      <div>
+        <div class="animaldetails">
         <h1 id="name"></h1>
+        <h3>weight:</h3>
         <p id="weight"></p>
+        <h3>height</h3>
         <p id="height"></p>
+        <h3>color</h3>
         <p id="color"></p>
+        <h3>habitat</h3>
         <p id="habitat"></p>
+        <h3>is predator ?</h3>
         <p id="isPredator"></p>
         <button id="feed-animal" onclick="feedAnimal()">Feed me</button>
-      </div>
     </div>
+
+    
     <div id="related-animals"></div>
-    <script src="./animal.js"></script>
+ 
     <script src="./zoo.js"></script>
+    <script src="./animal.js"></script>
+
+
 
   </body>
 </html>

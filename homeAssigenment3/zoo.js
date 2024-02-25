@@ -1,16 +1,16 @@
-function renderAvailableAnimals() {
+//function renderAvailableAnimals() {
     // ממשו את הלוגיקה שמרנדרת את החיות לתוך הדיב עם האיידי animal-cards
     // וודאו שאתם מציגים אך ורק את החיות שעומדות בפילטורים הנוכחיים
     // במידה ואין פילטרים מסומנים, הציגו את כל החיות
-  }
-  function visitAnimal(animalName) {
+  //}
+  function visitAnimal(chosenAnimal) {
     // ממשו את הלוגיקה של מעבר לעמוד חיה עבור החיה הספציפית שנבחרה
     // שמרו בלוקל סטורג' את החיה שנבחרה, כך שבעמוד החיה נוכל לשלוף אותה מהסטורג' ולהציגה בהתאם
   
-    localStorage.setItem('chosenAnimal', JSON.stringify(animalName));//שומרת אותו באחסון המקומי
+    localStorage.setItem('chosenAnimal', JSON.stringify(chosenAnimal));//שומרת אותו באחסון המקומי
     const storedAnimals = JSON.parse(localStorage.getItem('chosenAnimal'));
     console.log(storedAnimals)
-  
+    window.location.href = "./animal.html"
   }
   
   function setFilter(filterKey, filterValue) {
@@ -35,7 +35,10 @@ o.text='Name:'+visitor.name+' ,Coins:'+visitor.coins;
 o.value=visitor;
  players.appendChild(o);
   });
-  const reset=()=>localStorage.clear();
+  function reset() {
+    localStorage.clear(); // Clear all items from local storage
+   window.location.href="./signup.html"
+}
 
   // Retrieve the player data from local storage
 const playerData = JSON.parse(localStorage.getItem('player'));
@@ -47,7 +50,7 @@ document.querySelector(".chosenplayer").textContent = playerData.name+' '+player
 let animalsForView = [...animals];
 const dialog = document.querySelector("#animal-dialog");
 
-const getAnimalsHTMLCard = (animal) => {  //התבנית שבה נוכל לראות את הפרטים עבור כל משתמש 
+window.getAnimalsHTMLCard = (animal) => {  //התבנית שבה נוכל לראות את הפרטים עבור כל משתמש 
     const template = `
         <div class="card" style="min-height: 360px;" >
           <img class="animal-card" src="${animal.image}" alt="${animal.name}"/>
@@ -80,7 +83,7 @@ const getAnimalsHTMLCard = (animal) => {  //התבנית שבה נוכל לרא�
         weight:animal.weight,height:animal.height,color:animal.color,habitat:animal.habitat}
         console.log(chosenAnimal);
         visitAnimal(chosenAnimal);
-        window.location.href = "./animal.html"
+
       }
       const handleAnimalsClick = (animal) => {
         dialog.innerHTML = "";
@@ -140,6 +143,6 @@ const getAnimalsHTMLCard = (animal) => {  //התבנית שבה נוכל לרא�
       };
       
       document.body.insertAdjacentElement("afterbegin", getSearchBox());
-      window.addEventListener("load", renderAnimals)
+      window.addEventListener("load", renderAnimals())
 
 

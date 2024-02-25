@@ -1,7 +1,26 @@
-#image img{
+
+.animaldetails{
+    display: flex;
+    flex-direction: column;
+}
+.animalpic img{
     width: 50%;
+    margin-left: 190px;
+    margin-top: 50px;
 }
 *{
     padding: 0;
     margin:0;
+}
+#resetbutton{
+    
+    background: none;
+    border: 2px solid;
+    font: inherit;
+    line-height: 1;
+    margin: 0.5em;
+    padding: 1em 2em;
+        box-shadow: 
+          0.3em 0.3em 0 0 black,
+          inset 0.3em 0.3em 0 0 black;
 }
