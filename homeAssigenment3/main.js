@@ -220,8 +220,37 @@ function generateDataset() {
         return wrapper;
       };
      
-      const playerData = JSON.parse(localStorage.getItem('player'));
 
+      ///////////////////move all of this to main -navbar related
+ const playersSelect = document.getElementById("players");
+ console.log(playersSelect)
+if (playersSelect) {
+  const playerData = JSON.parse(localStorage.getItem('player'));
+  console.log('hi')
+  visitors = JSON.parse(localStorage.getItem("visitors"));
+
+  visitors.forEach(function(visitor){
+let o=document.createElement("option");
+o.text='Name:'+visitor.name+' ,Coins:'+visitor.coins;
+o.value=visitor;
+console.log(players)
+ players.appendChild(o);
+  });
+  // Set the content of the element with the class "chosenplayer"
+document.querySelector(".chosenplayer").textContent = playerData.name+' '+playerData.coins;
+  // Retrieve the player data from local storage
+  if(!playerData){
+    location.href="./login.html"
+  }
+  
+}
+
+
+
+
+    
+/////////////////////////
+// כשלוחצים על כפתור הריסט נעבור לדף הרשמה
       function reset() {
         localStorage.clear(); // Clear all items from local storage
        window.location.href="./signup.html"

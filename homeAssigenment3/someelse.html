@@ -1,128 +1,48 @@
 <!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="keywords" content="app, landing, corporate, Creative, Html Template, Template">
-    <meta name="author" content="web-themes">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Popup Modal Box</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+  </head>
+  <body>
+    <section>
+      <button class="show-modal">Show Modal</button>
+      <span class="overlay"></span>
 
-    <!-- title -->
-    <title>carousel slider</title>
+      <div class="modal-box">
+        <i class="fa-regular fa-circle-check"></i>
+        <h2>Completed</h2>
+        <h3>You have sucessfully downloaded all the source code files.</h3>
 
-    <!-- favicon -->
-    <!-- <link href="img/favicon.png" type="image/png" rel="icon"> -->
-
-    <!-- all css here -->
-
-    <link href="./someelse.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-    
-    <!-- card area start -->
-    <div class="card_wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h2 class="head_text">Featured profiles</h2>
-                    <p class="head_para">Aenean at ligula massa. Donec ipsum elit, placenta sed duierrut<br> dapibus semper turpin Fusce nec premium nuns.</p>
-                </div>
-                <div class="col-12">
-                    <div class="owl-carousel slider_carousel">
-                        <div class="card_box">
-                            <img class="img-fluid w-100" src="img/slider-01.png" alt="">
-                            <div class="card_text">
-                                <h4>Profile ID: 23456</h4>
-                                <p>1901 Thornridge Cir. Shiloh, Hawaii 81063</p>
-                            </div>
-                        </div>
-                        <div class="card_box">
-                            <img class="img-fluid w-100" src="img/slider-03.png" alt="">
-                            <div class="card_text">
-                                <h4>Profile ID: 23456</h4>
-                                <p>1901 Thornridge Cir. Shiloh, Hawaii 81063</p>
-                            </div>
-                        </div>
-                        <div class="card_box">
-                            <img class="img-fluid w-100" src="img/slider-04.png" alt="">
-                            <div class="card_text">
-                                <h4>Profile ID: 23456</h4>
-                                <p>1901 Thornridge Cir. Shiloh, Hawaii 81063</p>
-                            </div>
-                        </div>
-                        <div class="card_box">
-                            <img class="img-fluid w-100" src="img/slider-05.png" alt="">
-                            <div class="card_text">
-                                <h4>Profile ID: 23456</h4>
-                                <p>1901 Thornridge Cir. Shiloh, Hawaii 81063</p>
-                            </div>
-                        </div>
-                        <div class="card_box">
-                            <img class="img-fluid w-100" src="img/slider-01.png" alt="">
-                            <div class="card_text">
-                                <h4>Profile ID: 23456</h4>
-                                <p>1901 Thornridge Cir. Shiloh, Hawaii 81063</p>
-                            </div>
-                        </div>
-                        <div class="card_box">
-                            <img class="img-fluid w-100" src="img/slider-03.png" alt="">
-                            <div class="card_text">
-                                <h4>Profile ID: 23456</h4>
-                                <p>1901 Thornridge Cir. Shiloh, Hawaii 81063</p>
-                            </div>
-                        </div>
-                        <div class="card_box">
-                            <img class="img-fluid w-100" src="img/slider-04.png" alt="">
-                            <div class="card_text">
-                                <h4>Profile ID: 23456</h4>
-                                <p>1901 Thornridge Cir. Shiloh, Hawaii 81063</p>
-                            </div>
-                        </div>
-                        <div class="card_box">
-                            <img class="img-fluid w-100" src="img/slider-05.png" alt="">
-                            <div class="card_text">
-                                <h4>Profile ID: 23456</h4>
-                                <p>1901 Thornridge Cir. Shiloh, Hawaii 81063</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="buttons">
+          <button class="close-btn">Ok, Close</button>
+          <button>Open File</button>
         </div>
-    </div>
-    <!-- card area end -->
+      </div>
+    </section>
 
-    <!-- all js here -->
-    <script src="./someelse.js"></script>
     <script>
-        
-        function slider_carouselInit() {
-            $('.owl-carousel.slider_carousel').owlCarousel({
-                dots: false,
-                loop: true,
-                margin: 30,
-                stagePadding: 2,
-                autoplay: false,
-                nav: true,
-                navText: ["<i class='far fa-arrow-alt-circle-left'></i>","<i class='far fa-arrow-alt-circle-right'></i>"],
-                autoplayTimeout: 1500,
-                autoplayHoverPause: true,
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    768: {
-                        items: 2,
-                    },
-                    992: {
-                        items: 5
-                    }
-                }
-            });
-        }
-        slider_carouselInit();
+      const section = document.querySelector("section"),
+        overlay = document.querySelector(".overlay"),
+        showBtn = document.querySelector(".show-modal"),
+        closeBtn = document.querySelector(".close-btn");
 
+      showBtn.addEventListener("click", () => section.classList.add("active"));
+
+      overlay.addEventListener("click", () =>
+        section.classList.remove("active")
+      );
+
+      closeBtn.addEventListener("click", () =>
+        section.classList.remove("active")
+      );
     </script>
-</body>
+  </body>
 </html>

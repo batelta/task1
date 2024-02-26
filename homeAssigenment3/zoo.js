@@ -1,3 +1,4 @@
+
 //function renderAvailableAnimals() {
     // ממשו את הלוגיקה שמרנדרת את החיות לתוך הדיב עם האיידי animal-cards
     // וודאו שאתם מציגים אך ורק את החיות שעומדות בפילטורים הנוכחיים
@@ -26,29 +27,7 @@
     // ודאו כי אתם שומרים את הפילטרים שהיוזר בחר בלוקל סטורג׳ וטוענים אותם בהתאם
     // רנדרו רק את החיות שעומדות בתנאים של הפילטרים
   }
-///////////////////move all of this to main -navbar related
-  const visitors = JSON.parse(localStorage.getItem('visitors'));
-  console.log(visitors)
-  visitors.forEach(function(visitor){
-let o=document.createElement("option");
-o.text='Name:'+visitor.name+' ,Coins:'+visitor.coins;
-o.value=visitor;
- players.appendChild(o);
-  });
-  function reset() {
-    localStorage.clear(); // Clear all items from local storage
-   window.location.href="./signup.html"
-}
 
-  // Retrieve the player data from local storage
-if(!playerData){
-  location.href="./login.html"
-}
-
-// Set the content of the element with the class "chosenplayer"
-document.querySelector(".chosenplayer").textContent = playerData.name+' '+playerData.coins;
-
-/////////////////////////
 
 const animals = JSON.parse(localStorage.getItem('animals'));
 

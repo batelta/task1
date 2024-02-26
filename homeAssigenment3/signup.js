@@ -1,3 +1,6 @@
+
+const visitors = JSON.parse(localStorage.getItem('visitors'));
+
 /*   מקבל שם, בודק שאין אותו כבר במערך האורחים ומחזיר אובייקט אורח
 /** */  
 const makeVisitor = (visitors, name,image) => {
