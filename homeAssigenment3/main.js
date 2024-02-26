@@ -1,5 +1,5 @@
 function generateDataset() {
-    window.visitors = [
+    let visitors = [
       {
         name: "John Smith",
         coins: 50,
@@ -102,7 +102,7 @@ function generateDataset() {
       },
     ];
 
-    window.animals = [
+    let animals = [
       {
         name: "Lion",
         isPredator: true,
@@ -204,8 +204,28 @@ function generateDataset() {
 
   generateDataset();
 
- 
+  getAnimalsHTMLCard = (animal) => {  //התבנית שבה נוכל לראות את הפרטים עבור כל משתמש 
+    const template = `
+        <div class="card" style="min-height: 360px;" >
+          <img class="animal-card" src="${animal.image}" alt="${animal.name}"/>
+          <div class="card-body">
+            <p class="card-text">${animal.name}</p>
+          </div>
+        </div>`;
   
+        const wrapper = document.createElement("div");
+        wrapper.className = "animal-card";
+        wrapper.innerHTML = template;
+        wrapper.addEventListener("click", () => handleAnimalsClick(animal));
+        return wrapper;
+      };
+     
+      const playerData = JSON.parse(localStorage.getItem('player'));
+
+      function reset() {
+        localStorage.clear(); // Clear all items from local storage
+       window.location.href="./signup.html"
+    }
   function logout() {
     //ממשו את הלוגיקה שמתנתקת מאורח מחובר
     // שימו לב לנקות את השדה המתאים בלוקל סטורג'

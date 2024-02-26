@@ -1,4 +1,5 @@
-function renderAnimal() {
+
+function renderoneAnimal() {
     //הציגו את החיה שאליה עברתם מעמוד גן החיות ששמורה בלוקל סטורג'
     // רנדרו את פרטי החיה לתוך האלמנטים המתאימים בהתאם לשדה הספציפי
         // Retrieve the player data from local storage
@@ -13,7 +14,7 @@ document.getElementById('isPredator').textContent  = animalData.isPredator;
 document.getElementById('animal-image').src = animalData.image;
 renderRelatedAnimals(animalData);
   }
-
+  const animals = JSON.parse(localStorage.getItem('animals'));
   function renderRelatedAnimals(animalData) {
     // ממשו את הלוגיקה שמרנדרת כרטיסיות של החיות ששדה ההאביטט שלהם זהה לחיה שמוצגת
     // רנדרו אותן לתוך הדיב שמיועד להן עם האיידי related-animals
@@ -49,11 +50,8 @@ renderRelatedAnimals(animalData);
     }
   
   }
-  //// לבדוק איך אפשר שהיא תעבוד בלי להעתיק פעמיים ! היא כבר קיימת בzoo
-  function reset() {
-    localStorage.clear(); // Clear all items from local storage
-   window.location.href="./signup.html"
-}
+
+ 
   function visitorGotEaten() {
     // ממשו את הלוגיקה של חיה שטורפת אורח
 visitors.forEach(visitor => {
@@ -65,28 +63,22 @@ visitors
   
   function animalEscaped() {
     //ממשו את הלוגיקה של חיה שבורחת מגן החיות
+    
   }
 
+console.log(playerData)
+  if(playerData===null)
+ { location.href="./login.html"}
+else{
 // Set the content of the element with the class "chosenplayer"
 document.querySelector(".chosenplayer").textContent = playerData.name+' '+playerData.coins;
+}
+renderoneAnimal();
 
-renderAnimal();
 
-/*
-if(numofcoins<=2)
-    {
-      if(animalData.isPredator==='true')
-      visitorGotEaten();
-    else 
-    animalEscaped();
-    }
-    else {
-    playerData.coins-=2;
-    }
-    */
     function updateNavbarCoins() {
       // Retrieve the player data from local storage
-      const playerData = JSON.parse(localStorage.getItem('player'));
+     
   
       // Update the num of coins displayed in the navbar
       document.querySelector(".chosenplayer").textContent = playerData.name + ' ' + playerData.coins;

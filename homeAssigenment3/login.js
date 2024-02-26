@@ -3,11 +3,11 @@ function loginAsVisitor(visitorName) {
   // שמרו את האורח שבחרתם, בלוקל סטורג' כך שבכל העמודים נדע מי האורח הנוכחי
 
   localStorage.setItem('player', JSON.stringify(visitorName));//שומרת אותו באחסון המקומי
-  const storedVisitors = JSON.parse(localStorage.getItem('player'));
-  console.log(storedVisitors)
+  const storedVisitors = JSON.parse(localStorage.getItem('player'));//check
+  console.log(storedVisitors)//check
 }
 
-
+const visitors = JSON.parse(localStorage.getItem('visitors'));
 let visitorsForView = [...visitors];
 const dialog = document.querySelector("#visitors-dialog");
 
@@ -95,6 +95,7 @@ const getVisitorsHTMLCard = (visitor) => {  //התבנית שבה נוכל לר�
       const renderVisitors = () => {
         const visitorsCards = visitorsForView.map(getVisitorsHTMLCard);
         const visitorsPlaceholder = document.getElementById("placeholder");
+        console.log(visitorsPlaceholder)
         visitorsPlaceholder.innerHTML = "";
       
         if (!visitorsCards.length) {

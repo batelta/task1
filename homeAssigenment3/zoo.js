@@ -8,8 +8,8 @@
     // שמרו בלוקל סטורג' את החיה שנבחרה, כך שבעמוד החיה נוכל לשלוף אותה מהסטורג' ולהציגה בהתאם
   
     localStorage.setItem('chosenAnimal', JSON.stringify(chosenAnimal));//שומרת אותו באחסון המקומי
-    const storedAnimals = JSON.parse(localStorage.getItem('chosenAnimal'));
-    console.log(storedAnimals)
+    const storedAnimals = JSON.parse(localStorage.getItem('chosenAnimal'));//check
+    console.log(storedAnimals)//check
     window.location.href = "./animal.html"
   }
   
@@ -26,7 +26,7 @@
     // ודאו כי אתם שומרים את הפילטרים שהיוזר בחר בלוקל סטורג׳ וטוענים אותם בהתאם
     // רנדרו רק את החיות שעומדות בתנאים של הפילטרים
   }
-
+///////////////////move all of this to main -navbar related
   const visitors = JSON.parse(localStorage.getItem('visitors'));
   console.log(visitors)
   visitors.forEach(function(visitor){
@@ -41,30 +41,22 @@ o.value=visitor;
 }
 
   // Retrieve the player data from local storage
-const playerData = JSON.parse(localStorage.getItem('player'));
+if(!playerData){
+  location.href="./login.html"
+}
 
 // Set the content of the element with the class "chosenplayer"
 document.querySelector(".chosenplayer").textContent = playerData.name+' '+playerData.coins;
 
+/////////////////////////
+
+const animals = JSON.parse(localStorage.getItem('animals'));
 
 let animalsForView = [...animals];
 const dialog = document.querySelector("#animal-dialog");
 
-window.getAnimalsHTMLCard = (animal) => {  //התבנית שבה נוכל לראות את הפרטים עבור כל משתמש 
-    const template = `
-        <div class="card" style="min-height: 360px;" >
-          <img class="animal-card" src="${animal.image}" alt="${animal.name}"/>
-          <div class="card-body">
-            <p class="card-text">${animal.name}</p>
-          </div>
-        </div>`;
-  
-        const wrapper = document.createElement("div");
-        wrapper.className = "animal-card";
-        wrapper.innerHTML = template;
-        wrapper.addEventListener("click", () => handleAnimalsClick(animal));
-        return wrapper;
-      };
+
+
 
       const getCloseModalHTMLButton = () => {
         const closeButton = document.createElement("button");
@@ -85,12 +77,24 @@ window.getAnimalsHTMLCard = (animal) => {  //התבנית שבה נוכל לרא
         visitAnimal(chosenAnimal);
 
       }
+
+      
       const handleAnimalsClick = (animal) => {
+        
         dialog.innerHTML = "";
         dialog.append(getCloseModalHTMLButton(), getAnimalsHTMLCard(animal),getselectanimalModalHTMLButton(animal));
         dialog.showModal();
       };
-
+      const renderAnimals = () => {
+        const animalsCards = animalsForView.map(getAnimalsHTMLCard);
+        const animalsPlaceholder = document.getElementById("placeholder");
+        console.log(animalsPlaceholder)
+        animalsPlaceholder.innerHTML = "";
+        if (!animalsCards.length) {
+          animalsPlaceholder.appendChild(getEmptyCardsHTMLTemplate());
+        }
+        animalsPlaceholder.append(...animalsCards);
+    };
       const getSearchBox = () => {
         const queryInput = document.createElement("input");
         queryInput.id = "query-input";
@@ -101,6 +105,7 @@ window.getAnimalsHTMLCard = (animal) => {  //התבנית שבה נוכל לרא
         animal.name.toLowerCase().includes(e.target.value) || animal.name.toUpperCase().includes(e.target.value)
        );
           renderAnimals();
+          
         };
       
         return queryInput;
@@ -131,16 +136,7 @@ window.getAnimalsHTMLCard = (animal) => {  //התבנית שבה נוכל לרא
         renderAnimals();
       };
       
-      const renderAnimals = () => {
-        const animalsCards = animalsForView.map(getAnimalsHTMLCard);
-        const animalsPlaceholder = document.getElementById("placeholder");
-        animalsPlaceholder.innerHTML = "";
-      
-        if (!animalsCards.length) {
-          animalsPlaceholder.appendChild(getEmptyCardsHTMLTemplate());
-        }
-        animalsPlaceholder.append(...animalsCards);
-      };
+     
       
       document.body.insertAdjacentElement("afterbegin", getSearchBox());
       window.addEventListener("load", renderAnimals())
