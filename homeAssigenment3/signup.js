@@ -58,11 +58,9 @@ function redirectToLogin() {
 
 function validateForm() {
   const name = document.getElementById('visitorname').value;
-  const age = document.getElementById('age').value;
-  const email = document.getElementById('email').value;
   const gender = document.querySelector('input[name="gender"]:checked');
 
-  if (name.trim() === '' || age.trim() === '' || email.trim() === '' || !gender) {
+  if (name.trim() === '' || !gender) {
       alert('Please fill out all the fields and select a gender.');
       return false; // Prevent form submission
   }
@@ -72,8 +70,7 @@ function validateForm() {
 
 function clearcontent(){
   document.getElementById('visitorname').value='';
-  document.getElementById('age').value='';
-  document.getElementById('email').value='';
+
 }
  // בודק האם האינפוטים קיימים ויש בהם ערך
 //  מחזיר האם תקין או לא (בוליאני)

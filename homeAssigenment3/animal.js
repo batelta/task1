@@ -13,8 +13,6 @@ function renderoneAnimal() {
     //הציגו את החיה שאליה עברתם מעמוד גן החיות ששמורה בלוקל סטורג'
     // רנדרו את פרטי החיה לתוך האלמנטים המתאימים בהתאם לשדה הספציפי
    
-//const animalData = JSON.parse(localStorage.getItem('chosenAnimal'));
-// Set the content of the element with the class "chosenAnimal"
 document.getElementById('name').textContent  = animalData.name;
 document.getElementById('weight').textContent  = animalData.weight;
 document.getElementById('height').textContent  = animalData.height;
@@ -116,7 +114,7 @@ renderRelatedAnimals(animalData);
           modal.style.display = "block";
 
           // Get the <span> element that closes the modal
-          let closebtn = document.querySelector(".closerunbutton");
+          let closebtn = document.querySelector(".closeatebutton");
            
           // Get the <p> element where you want to add the animal name
           let messageParagraph = document.querySelector("#ateModal .modal-body p");

@@ -65,3 +65,7 @@ button:hover {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+/* Ensure modals are displayed on top of other content */
+.modal {
+    z-index: 9999;
+}

@@ -12,40 +12,29 @@
   <body>
     
     <!-- צרו טופס יצירת אורח חדש -->
-    <div class="wrapper">
+    <div class="container" id="container"> <!---מכיל את שניהם -->
+      <div class="form-container">  
     <form id="create-visitor-form" >
-      <h1>Sign up</h1>
+      <h1>Or ,Sign up</h1>
       <div class="input-box">
         <input type="text" placeholder="Full name" required id="visitorname" name="name">
         <i class='bx bxs-user'></i>
       </div>
-      
-        <br><br>
-        <div class="input-box">
-          <input type="number" id="age" name="age" placeholder="Age" min="14" max="70">
-          <i class='bx bxs-lock-alt' ></i>
-        </div>
-       
-        <br><br>
-        <div class="input-box">
-         <input type="email" id="email" name="email" placeholder="Email" required>
-          <i class='bx bxs-lock-alt' ></i>
-        </div>
-        
-        
-        <br><br>
-        <div class="remember-forgot">
+        <br>
+        <div class="gender">
           <input type="radio" id="male" name="gender" value="male" />
           <label for="male">Male</label><br />
           <input type="radio" id="female" name="gender" value="female" />
           <label for="female">Female</label><br /><br/>
         </div> 
-        <div class="input-box">Already registered ? 
-          <btn id="loginbtn" class="btn" onclick="redirectToLogin()">Login in </btn>
+        <input type="submit" value="submit" class="btn gm-btn gb-cutter" >
+      </form>
+    </div>
+        <div class="login-container">
+                  <h1>Welcome to the zoo 🦍</h1><br><br>
+                  <p>To play with existing player , press the button below </p><br><br>
+                  <button class="btn gm-btn gb-cutter" id="loginbtn" onclick="redirectToLogin()">Login Here</button>
         </div>
-        <input type="submit" value="submit" class="btn" >
-        </form>
-        
       </div>
         
     <!-- לאחר יצירה, הוסיפו אותו למערך האורחים ושמרו את מערך האורחים המעודכן בלוקל סטורג' -->
