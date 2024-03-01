@@ -1,0 +1,145 @@
+html{
+scroll-behavior: smooth;}
+body{ 
+background-color:#30425D ;
+font-family: 'Georgia', Serif;    
+font:bold;
+color:#CACEDA;
+text-align: center;
+}
+.head
+{background-color: #0e0424;
+  color: #fff;
+padding:20px;
+}
+header p{padding-top: 30px;}
+h1{font-size:200% ;
+  font-family: 'Handlee', cursive;}
+h2{
+  font-size: 180%;
+  font-family: 'Handlee', cursive;}
+
+ a:hover{ background-color: rgb(121, 131, 177);}
+
+body p,nav{font-size: 150%;}
+
+.list{
+display: flex;
+gap:40px;
+list-style-type: none;
+text-align: center;
+font-size: 90%;
+padding-top: 90px;
+}
+.list li{
+  padding:19px ;
+  box-shadow:3px 3px 3px 4px #0e0424;
+  border-radius: 40px;
+}
+
+.section{display: flex;
+  flex-direction: row;
+   justify-content: center;
+   vertical-align:middle;
+   position: relative;
+   gap:16px;
+ }
+ .section div{
+ padding :70px;}
+ .section img{ width:500px ;
+     height:400px ;
+     margin-top: 70px;
+     margin-bottom: 70px;
+     margin-right:15px;
+     box-shadow:2px 2px 10px #2b262d;
+ }
+ .section h2{background-color: #0e0424;
+  color:#CACEDA ;
+}
+.section div{font-size: 90%;}
+#happy{
+    background-color: #6F7F9B;
+    COLOR:#30425D ;
+}
+#happy div{box-shadow:3px 3px 3px 4px #0e0424;
+ margin: 35px;
+ padding-top: 70px;
+ padding-bottom: 70px;
+}
+#food{background-color:#334C72;
+}
+#food p,ol{font-size:120% ;
+}
+#food img{position:sticky;
+  top:70px;
+margin-left: 10px;}
+#food div{
+    box-shadow:1px 1px 1px 1px #e7e1f4;
+    border: #eae5f5;
+   margin: 60px;
+}
+#brain{
+  background-color:#6180AD;
+  COLOR:#30425D ;
+}
+#brain p{padding:8px;}
+#health{
+background-color:#6f7f9bf3;
+COLOR:#30425D ;
+}
+#health h2{
+background-color:#081324 ;
+color:#CACEDA;
+gap:30px;
+margin-top: 0px;
+padding:10px;}
+
+.cards{display: flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content: center;
+    vertical-align:middle;
+    padding: 20px;
+    }
+
+.card{
+    width: 200px;
+    height: 320px;
+    font-size: 70%;
+    margin: 17px;
+    padding: 8px 15px ;
+    box-shadow:2px 2px 10px black;
+    color:#CACEDA;
+    background-color:#30425D;
+    border: 1px solid #120028;
+    border-radius:5px;
+  }
+.card img {
+width: 100%;
+height: 180px;
+box-shadow:2px 2px 10px #160d2a;
+}
+
+.end {
+    background-image:url(blueberries_images/background_image.jpg) ;
+    background-position: center center;
+    background-size: cover;   
+    padding:20%;
+}
+.end ul{list-style-type:none;}
+
+.links{ color:black;}
+
+  .links a:link, a:visited {
+    background-color:#2b262d;
+    color: white;
+    padding: 5px;
+    margin: 5px;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  .links a:hover{
+    background-color: rgb(126, 129, 147);
+  }
+  

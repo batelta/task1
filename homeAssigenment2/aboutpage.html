@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./portfoliostyle.css"/>
+   <link rel="stylesheet" href="./mediaqueries.css"/>
+</head>
+<body>
+    <nav id="menu">
+        <div class="logo"><a href="./portfolio_website.html" class="menu_links onit">Batel Tasama</a></div>
+        <div>
+            <ul class="menu_links">
+                <li class="hideonmobile"><a href="./aboutpage.html" class="active">About</a></li>
+                <li class="hideonmobile"><a href="./skillspage.html">Skills</a></li>
+                <li class="hideonmobile"><a href="./projectspage.html">Projects</a></li>
+                <li class="menuicon" onclick=showmobilemenu()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="mobile_nav">
+        <div class="mobile_menu"> 
+            <div class="mobilelogo"><a href="./portfolio_website.html">Batel Tasama</a></div>
+                <ul class="mobile_links">
+                    <li class="colseicon" onclick=hidemobilemenu()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                <li><a href="./aboutpage.html" class="active">About</a></li>
+                <li><a href="./skillspage.html">Skills</a></li>
+                <li><a href="./projectspage.html">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class = "about-wrapper">
+        <div class = "about-left">
+          <div class = "about-left-content">
+            <div>
+              <div class = "shadow">
+                <div class = "about-img">
+                  <img src = "./mypic/photo_5926931611964782975_y (1).jpg" alt = "about image">
+                </div>
+              </div>
+              <h3>things i love:</h3>
+            </div>
+            <ul class = "icons">
+              <li><img src="./mypic/icons8-tanjiro-kamado-32.png" 
+                alt="animepic" class="png"></li>
+              <li><img src="./mypic/icons8-sunset-32.png"
+                alt="sunsetpic" class="png"></li>
+              <li><img src="./mypic/icons8-friends-32.png"
+                alt="friendspic" class="png"></li>
+              <li><img src="./mypic/icons8-pasta-32.png"
+                alt="pastapic" class="png"></li>
+            </ul>
+          </div>
+          
+        </div>
+        <div class = "about-right">
+         <div class="about-text-animation">
+          <h1>All</h1>
+          <h1>All</h1></div>
+          <h2>About Me<BR></h2>
+          <div class = "about-para">
+            <p>My name is batel tasama , I'm 26 years old and on my third year of industrial engineering</p>
+            <p>In my very little spear time I enjoy watching anime and reading .</p>
+            <p>My goal is to gain knowledge and be happy </p>
+            <P>🤍</P>
+          </div>
+        </div>
+      </div>
+
+         <script src="./myportfolio.js"></script>    
+</body>
+</html>
