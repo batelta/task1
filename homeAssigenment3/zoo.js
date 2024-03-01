@@ -3,9 +3,9 @@ function renderAvailableAnimals() {
 }
 
 // get the objects from the localStorage
-const visitors = JSON.parse(localStorage.getItem("visitors"));
+//const visitors = JSON.parse(localStorage.getItem("visitors"));
 const animals = JSON.parse(localStorage.getItem("animals"));
-const playerData = JSON.parse(localStorage.getItem("player"));
+//const playerData = JSON.parse(localStorage.getItem("player"));
 console.log("visitors: ", visitors);//בדיקה 
 console.log("animals: ", animals);//בדיקה
 console.log("playerData: ", playerData);//בדיקה
@@ -73,68 +73,12 @@ function clearAllFilters(event) {
 document.getElementById("filter-button").addEventListener("click", setFilter);
 
 
-//navbar
-const pic=document.querySelector('.playerImg')
-console.log(playerData.image)
-pic.src =playerData.image;
-////problem with dropdown list !!!
-document.addEventListener('DOMContentLoaded', function() {
-  const showPlayers = document.querySelector('.showplayers');
-  const playersList = document.getElementById('players');
-
-  // Function to toggle the visibility of the players list
-  function togglePlayersList() {
-    playersList.style.display = playersList.style.display === 'block' ? 'none' : 'block';
-  }
-
-  // Show or hide the players list when hovering over the "All players" span
-  showPlayers.addEventListener('mouseenter', togglePlayersList);
-  showPlayers.addEventListener('mouseleave', togglePlayersList);
-
-  // Keep the players list visible when hovering over it
-  playersList.addEventListener('mouseenter', () => playersList.style.display = 'block');
-
-  // Hide the players list when leaving it
-  playersList.addEventListener('mouseleave', () => playersList.style.display = 'none');
-});
-
-visitors.forEach(function (visitor) {
-  let o = document.createElement("li");
-  o.textContent = visitor.name + " ," + visitor.coins;
-  o.visitor=visitor;
-  console.log(visitor)
-  console.log(o)
-  let a=document.createElement("a")
-  a.textContent = "click";
-  a.href = "#"; // Set the href attribute to "#" to make it clickable
-  a.addEventListener("click", function(event) {
-    event.preventDefault(); // Prevent the default link behavior
-    loginAsVisitor(o.visitor); // Pass the associated visitor object to the handler
-    updateNavbar(visitor); // Update the navbar with the visitor data
-  });
-  o.appendChild(a);
-  players.appendChild(o);
-});
-/*visitors.forEach(function (visitor) {
-  let o = document.createElement("option");
-  o.text = "Name:" + visitor.name + " ,Coins:" + visitor.coins;
-  o.value = visitor;
-  players.appendChild(o);
-});
-*/
-function reset() {
-  localStorage.clear(); // Clear all items from local storage
-  window.location.href = "./signup.html";
-}
 
 // Retrieve the player data from local storage
 if (!playerData) {
   location.href = "./login.html";
 }
 
-// Set the content of the element with the class "chosenplayer"
-document.querySelector(".chosenplayer").textContent =
-  playerData.name + " " + playerData.coins;
 
 let animalsForView = [...animals];
 const dialog = document.querySelector("#animal-dialog");
