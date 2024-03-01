@@ -110,7 +110,7 @@ function generateDataset() {
         height: 120,
         color: "brown",
         habitat: "land",
-        image:"https://static.vecteezy.com/system/resources/previews/005/112/698/original/cute-lion-cartoon-lying-down-free-vector.jpg"
+        image:"./lion bg.png"
       },
       {
         name: "Elephant",
@@ -119,7 +119,7 @@ function generateDataset() {
         height: 200,
         color: "grey",
         habitat: "land",
-        image:"https://t4.ftcdn.net/jpg/00/63/25/87/360_F_63258772_2MCf7bx50H6fKQNiMS9mzDfVw1oJykmr.jpg"
+        image:"./elephant.png"
       },
       {
         name: "Giraffe",
@@ -128,7 +128,7 @@ function generateDataset() {
         height: 120,
         color: "brown",
         habitat: "land",
-        image:"https://t3.ftcdn.net/jpg/00/95/46/88/360_F_95468841_5Sf97aPXpawo9WvR0AoOSiK9fjlRIwHE.jpg"
+        image:"./giraffe.png"
       },
       {
         name: "Tiger",
@@ -137,7 +137,7 @@ function generateDataset() {
         height: 120,
         color: "brown",
         habitat: "land",
-        image:"https://media.istockphoto.com/id/1084217224/vector/cartoon-cute-tiger-vector-illustration-of-funny-happy-animal.jpg?s=612x612&w=0&k=20&c=XSwwExCdqirug9PLBe5tvzC1bWAc4NDVCZjmUd3cPnA="
+        image:"./tiger.png"
       },
       {
         name: "Monkey",
@@ -146,7 +146,7 @@ function generateDataset() {
         height: 120,
         color: "brown",
         habitat: "land",
-        image:"https://img.freepik.com/premium-vector/cute-monkey-cartoon_146562-7.jpg"
+        image:"./monkey.png"
       },
       {
         name: "Kangaroo",
@@ -155,7 +155,7 @@ function generateDataset() {
         height: 120,
         color: "brown",
         habitat: "land",
-        image:"https://t4.ftcdn.net/jpg/02/53/43/21/360_F_253432125_jIvEA2B5WKVN1ndlmoJnsof15900M5bv.jpg"
+        image:"./kangaroo.png"
       },
       {
         name: "Penguin",
@@ -164,16 +164,16 @@ function generateDataset() {
         height: 120,
         color: "brown",
         habitat: "sea",
-        image:"https://t4.ftcdn.net/jpg/01/28/53/89/360_F_128538937_mrePXaBf9rNNr507Iij35gLkuSqEuXdW.jpg"
+        image:"./penguin.png"
       },
       {
         name: "Zebra",
         isPredator: false,
         weight: 100,
         height: 120,
-        color: "brown",
+        color: "black",
         habitat: "land",
-        image:"https://i.pinimg.com/736x/59/c3/5b/59c35bc73af7141e10efbc8028637212.jpg"
+        image:"./zebra.png"
       },
       {
         name: "Cheetah",
@@ -182,7 +182,7 @@ function generateDataset() {
         height: 120,
         color: "brown",
         habitat: "land",
-        image:"https://t3.ftcdn.net/jpg/01/19/87/22/360_F_119872213_dVauWvVOkfqiVrSjG9SULNoX6cyihMtA.jpg"
+        image:"./cheeta.png"
       },
     ];
   
@@ -206,10 +206,10 @@ function generateDataset() {
 
   getAnimalsHTMLCard = (animal) => {  //התבנית שבה נוכל לראות את הפרטים עבור כל משתמש 
     const template = `
-        <div class="card" style="min-height: 360px;" >
+        <div class="card" style="height: 300px; width:300px" >
+        <p class="card-text">${animal.name}</p>
           <img class="animal-card" src="${animal.image}" alt="${animal.name}"/>
           <div class="card-body">
-            <p class="card-text">${animal.name}</p>
           </div>
         </div>`;
   
@@ -218,7 +218,7 @@ function generateDataset() {
         wrapper.innerHTML = template;
         wrapper.addEventListener("click", () => handleAnimalsClick(animal));
         return wrapper;
-      };
+  };
      
 
       ///////////////////move all of this to main -navbar related
@@ -245,6 +245,26 @@ document.querySelector(".chosenplayer").textContent = playerData.name+' '+player
   
 }
 
+function loginAsVisitor(visitorName) {
+  // תממשו את הלוגיקה של בחירת אורח שנכנס לגן החיות
+  // שמרו את האורח שבחרתם, בלוקל סטורג' כך שבכל העמודים נדע מי האורח הנוכחי
+  localStorage.setItem('player', JSON.stringify(visitorName));//שומרת אותו באחסון המקומי
+
+}
+function updateNavbar(playerData) {
+  // Retrieve the player data from local storage
+  let storedPlayerData = JSON.parse(localStorage.getItem('player'));
+
+  // Update the player data
+  storedPlayerData.name = playerData.name;
+  storedPlayerData.coins = playerData.coins;
+
+  // Store the updated player data back into local storage
+  localStorage.setItem('player', JSON.stringify(storedPlayerData));
+
+  // Update the num of coins displayed in the navbar
+  document.querySelector(".chosenplayer").textContent = storedPlayerData.name + ' ' + storedPlayerData.coins;
+}
 
 
 

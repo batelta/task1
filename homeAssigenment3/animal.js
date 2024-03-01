@@ -67,7 +67,7 @@ renderRelatedAnimals(animalData);
         modal.style.display = "none";
       }
     };
-  
+    AddFeededAnimal();
   const numofcoins=playerData.coins;
   if(numofcoins<=0)
     {
@@ -85,7 +85,13 @@ renderRelatedAnimals(animalData);
   
   }
 
- 
+  function AddFeededAnimal() {
+    // Retrieve visitedAnimals from local storage and initialize it as an empty array if it doesn't exist
+    let feededAnimals = JSON.parse(localStorage.getItem('feededAnimals')) || [];
+  
+    feededAnimals.push(animalData);
+    localStorage.setItem("feededAnimals", JSON.stringify(feededAnimals));
+  } 
   //function visitorGotEaten() {
     // ממשו את הלוגיקה של חיה שטורפת אורח
 //visitors.forEach(visitor => {
@@ -193,11 +199,4 @@ document.querySelector(".chosenplayer").textContent = playerData.name+' '+player
 }
 
 
-    function updateNavbarCoins() {
-      // Retrieve the player data from local storage
-     
-  
-      // Update the num of coins displayed in the navbar
-      document.querySelector(".chosenplayer").textContent = playerData.name + ' ' + playerData.coins;
-  }
-
+   

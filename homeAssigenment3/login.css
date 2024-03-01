@@ -4,6 +4,7 @@ body {
     background-position: center;
     padding: 90px 150px;
     background: url(./zooimage2.jpg)no-repeat ;
+
     background-position: center center;
     background-size: cover;   
     padding:20%;
@@ -30,14 +31,16 @@ body {
   width:200px;
 }
 .card{
-  box-shadow: 1px 7px 10px darkgrey;
-}
+  box-shadow: 2px 8px 11px grey;
+  border: 70px;
+  border-radius: 33%;}
 
 .visitors-card {
     max-width: 250px;
     max-height: 100px;
     overflow: hidden;
     background: white;
+
     border-radius: 20px;
     animation: fade-in 0.4s ease-in forwards;
   
@@ -54,8 +57,8 @@ body {
     max-width: 100%;
     object-fit: contain;
     max-height: 100px;
-    margin: 10px auto;
-    max-width: 150px;
+    margin: 7px 38px auto;
+        max-width: 150px;
   }
 
   .card-text img{

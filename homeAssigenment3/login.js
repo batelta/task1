@@ -1,11 +1,4 @@
-function loginAsVisitor(visitorName) {
-  // תממשו את הלוגיקה של בחירת אורח שנכנס לגן החיות
-  // שמרו את האורח שבחרתם, בלוקל סטורג' כך שבכל העמודים נדע מי האורח הנוכחי
 
-  localStorage.setItem('player', JSON.stringify(visitorName));//שומרת אותו באחסון המקומי
-  const storedVisitors = JSON.parse(localStorage.getItem('player'));//check
-  console.log(storedVisitors)//check
-}
 
 const visitors = JSON.parse(localStorage.getItem('visitors'));
 let visitorsForView = [...visitors];
