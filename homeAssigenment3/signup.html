@@ -5,39 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Signup</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link href="./signup.css" rel="stylesheet">
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link href="./signup.css" rel="stylesheet" />
     <script src="./main.js"></script>
   </head>
   <body>
-    
     <!-- צרו טופס יצירת אורח חדש -->
-    <div class="container" id="container"> <!---מכיל את שניהם -->
-      <div class="form-container">  
-    <form id="create-visitor-form" >
-      <h1>Sign up</h1>
-      <div class="input-box">
-        <input type="text" placeholder="Full name" required id="visitorname" name="name">
-        <i class='bx bxs-user'></i>
+    <div class="container" id="container">
+      <!---מכיל את שניהם -->
+      <div class="form-container">
+        <form id="create-visitor-form">
+          <h1>Sign up</h1>
+          <div class="input-box">
+            <input
+              type="text"
+              placeholder="Full name"
+              required
+              id="visitorname"
+              name="name"
+            />
+            <i class="bx bxs-user"></i>
+          </div>
+          <br />
+          <div class="gender">
+            <input type="radio" id="male" name="gender" value="male" />
+            <label for="male">Male</label><br />
+            <input type="radio" id="female" name="gender" value="female" />
+            <label for="female">Female</label><br /><br />
+          </div>
+          <input type="submit" value="submit" class="btn gm-btn gb-cutter" />
+        </form>
       </div>
-        <br>
-        <div class="gender">
-          <input type="radio" id="male" name="gender" value="male" />
-          <label for="male">Male</label><br />
-          <input type="radio" id="female" name="gender" value="female" />
-          <label for="female">Female</label><br /><br/>
-        </div> 
-        <input type="submit" value="submit" class="btn gm-btn gb-cutter" >
-      </form>
+      <div class="login-container">
+        <h1>Welcome to the zoo 🦍</h1>
+        <h2>where you can feed our animals or visit them</h2>
+        <br /><br />
+        <p>To play with existing player , press the button below</p>
+        <br /><br />
+        <button
+          class="btn gm-btn gb-cutter"
+          id="loginbtn"
+          onclick="redirectToLogin()"
+        >
+          Login Here
+        </button>
+      </div>
     </div>
-        <div class="login-container">
-                  <h1>Welcome to the zoo 🦍</h1>
-                  <h2>where you can feed our animals or visit them</h2><br><br>
-                  <p>To play with existing player , press the button below </p><br><br>
-                  <button class="btn gm-btn gb-cutter" id="loginbtn" onclick="redirectToLogin()">Login Here</button>
-        </div>
-      </div>
-        
+
     <!-- לאחר יצירה, הוסיפו אותו למערך האורחים ושמרו את מערך האורחים המעודכן בלוקל סטורג' -->
     <!-- עברו לעמוד התחברות כדי לבחור את האורח שאיתו תכנסו לגן החיות -->
     <!-- ממשו את הלוגיקה של היצירה, בפונקציה שהוגדרה מראש בקובץ signup.js -->
