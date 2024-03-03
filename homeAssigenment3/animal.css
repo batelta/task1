@@ -3,32 +3,35 @@
     display: flex;
     flex-direction: column;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-    width: 38%;
-    position: absolute;
-    top: 50px;
-    right: 0px;
-    border-radius: 7px 2px 2px 7px;
+    background-color: forestgreen;
+
+
 }
-/*img {
+.animals-card img {
     width: 100px;
     height: 30px;
-    //max-width: 100%;
+    max-width: 100%;
     max-height: 100%;
     object-fit: contain;
     margin: 0 auto;
   }
-*/
-.animal-container{
-  display: flex;
-  
+*{
+    padding: 0;
+    margin:0;
 }
-h3{
-  padding:0px;
-  margin: 2px;
+#resetbutton{
+    
+    background: none;
+    border: 2px solid;
+    font: inherit;
+    line-height: 1;
+    margin: 0.5em;
+    padding: 1em 2em;
+        box-shadow: 
+          0.3em 0.3em 0 0 black,
+          inset 0.3em 0.3em 0 0 black;
 }
-.animaldetails p{
-  margin:0px;
-}
+
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 body {
     font-family: 'Ubuntu', sans-serif;
@@ -60,81 +63,19 @@ button:hover {
   background-position: -20px -20px;
 }
 
-/*trying plz work*/
-
-/*Dialog Styles*/
-:root {
-	--vs-primary: 29 92 255;
+.modal.show .modal-dialog {
+    width: 350px;
 }
-dialog {
-	padding: 1rem 3rem;
-	background: white;
-	max-width: 400px;
-	padding-top: 2rem;
-	border-radius: 20px;
-	border: 0;
-	box-shadow: 0 5px 30px 0 rgb(0 0 0 / 10%);
-	animation: fadeIn 1s ease both;
-	&::backdrop {
-		animation: fadeIn 1s ease both;
-		background: rgb(255 255 255 / 40%);
-		z-index: 2;
-		backdrop-filter: blur(10px);
-	}
-	.x {
-		filter: grayscale(1);
-		border: none;
-		background: none;
-		position: absolute;
-		top: 15px;
-		right: 10px;
-		transition: ease filter, transform 0.3s;
-		cursor: pointer;
-		transform-origin: center;
-		&:hover {
-			filter: grayscale(0);
-			transform: scale(1.1);
-		}
-	}
-	h2 {
-		font-weight: 600;
-		font-size: 2rem;
-		padding-bottom: 1rem;
-	}
-	p {
-		font-size: 1rem;
-		line-height: 1.3rem;
-		padding: 0.5rem 0;
-	
-	}
+.modal-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-
-button {
-	display: inline-block;
-	font-size: 0.8rem;
-	color: #fff !important;
-  background-color: #87e4a3;
-	padding: 13px 25px;
-	border-radius: 17px;
-	transition: background-color 0.1s ease;
-	box-sizing: border-box;
-	transition: all 0.25s ease;
-	border: 0;
-	cursor: pointer;
-	box-shadow: 0 10px 20px -10px #62a677;
-	&:hover {
-		box-shadow: 0 20px 20px -10px #94ffb6;
-		transform: translateY(-5px);
-	}
+/* Ensure modals are displayed on top of other content */
+.modal {
+    z-index: 9999;
 }
-
-@keyframes fadeIn {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
+.modal-content{
+    background-color: rgb(176, 255, 164);
 }
-
-

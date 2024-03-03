@@ -2,6 +2,11 @@
 const animalData = JSON.parse(localStorage.getItem('chosenAnimal'));
      // Retrieve the animals array from local storage
 const animals = JSON.parse(localStorage.getItem('animals'));
+console.log(typeof(animals))//למחוק
+console.log(animals)//למחוק
+console.log(animalData.isPredator)//למחוק
+const visitors = JSON.parse(localStorage.getItem('visitors'));
+const playerData = JSON.parse(localStorage.getItem('player'));
 
 
 function renderoneAnimal() {
@@ -16,7 +21,7 @@ document.getElementById('color').textContent  = animalData.color;
 document.getElementById('isPredator').textContent  = animalData.isPredator;
 document.getElementById('animal-image').src = animalData.image;
 renderRelatedAnimals(animalData);
-}
+  }
  
   function renderRelatedAnimals(animalData) {
     // ממשו את הלוגיקה שמרנדרת כרטיסיות של החיות ששדה ההאביטט שלהם זהה לחיה שמוצגת
@@ -35,97 +40,163 @@ renderRelatedAnimals(animalData);
   };
   renderoneAnimal();
 
+    // Get the modal element
+    let modal = document.getElementById("feedModal");
+  function feedAnimal() {
 
-  function AddFedAnimal() {
-    // Retrieve the current player's data from local storage
-    let currentPlayer = JSON.parse(localStorage.getItem('player'));
+  
+    // When the user clicks on the button, open the modal
+    modal.style.display = "block";
+  
+    // Get the <span> element that closes the modal
+    let closebtn = document.querySelector(".closebutton");
+  
+    // Get the <p> element where you want to add the animal name
+    let messageParagraph = document.querySelector("#feedModal .modal-body p");
 
-    // Initialize the fedAnimals array if it doesn't exist
-    currentPlayer.fedAnimals = currentPlayer.fedAnimals || [];
+    // Set the text content of the <p> element to include the animal name
+    messageParagraph.textContent = `Thank you for feeding the ${animalData.name}!`;
+    // When the user clicks on <span> (x) or the "Close" button, close the modal
+    closebtn.addEventListener("click", function() {
+      modal.style.display = "none";
+    });
+  
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+    AddFeededAnimal();
+  const numofcoins=playerData.coins;
+  if(numofcoins<=0)
+    {
+      modal.style.display = "none";
+      if(animalData.isPredator===true)
+      visitorGotEaten();
+    else 
+    animalEscaped();
+    }
+    else {
+    playerData.coins-=2;
+    localStorage.setItem('player', JSON.stringify(playerData));
+    updateNavbarCoins();
+    }
+  
+  }
 
-    // Push the new animal data to the fedAnimals array
-    currentPlayer.fedAnimals.push(animalData);
+  function AddFeededAnimal() {
+    // Retrieve visitedAnimals from local storage and initialize it as an empty array if it doesn't exist
+    let feededAnimals = JSON.parse(localStorage.getItem('feededAnimals')) || [];
+  
+    feededAnimals.push(animalData);
+    localStorage.setItem("feededAnimals", JSON.stringify(feededAnimals));
+  } 
+  //function visitorGotEaten() {
+    // ממשו את הלוגיקה של חיה שטורפת אורח
+//visitors.forEach(visitor => {
+ // if(playerData.name===visitor.name){
+  //const playerindex=indexOf(visitor)
+  //console.log(playerindex)//בדיקה לעצמי
+  //const deletedplayer=visitors.splice(index,1)
+ // console.log(deletedplayer)//בדיקה לעצמי
+  //localStorage.setItem('visitors', JSON.stringify(visitors));//עדכון המערך ששמור בלוקל סטורג
+  //}
+  //});
+  //window.location.href="./login.html"
 
-    // Update the current player's data in local storage
-    localStorage.setItem('player', JSON.stringify(currentPlayer));
-}
-
+ // }
  function visitorGotEaten() {
   visitors.forEach((visitor, index) => {
       if (playerData.name === visitor.name) {
           visitors.splice(index, 1);
           localStorage.setItem('visitors', JSON.stringify(visitors));
-          localStorage.removeItem('player'); // Remove the chosen player from local storage   
-//  redirectTologin(); // Redirect to login after closing the modal
-  };
-      
-  });}
+          localStorage.removeItem('player'); // Remove the chosen player from local storage
 
+           //Get the modal element
+          let modal = document.getElementById("ateModal");
+
+          // When the user clicks on the button, open the modal
+          modal.style.display = "block";
+
+          // Get the <span> element that closes the modal
+          let closebtn = document.querySelector(".closeatebutton");
+           
+          // Get the <p> element where you want to add the animal name
+          let messageParagraph = document.querySelector("#ateModal .modal-body p");
+
+         // Set the text content of the <p> element to include the animal name
+          messageParagraph.textContent = `Oh no !🙀 the ${animalData.name} ate your player!`;
+          // When the user clicks on <span> (x) or the "Close" button, close the modal
+          closebtn.addEventListener("click", function() {
+              modal.style.display = "none";
+              redirectTologin(); // Redirect to zoo after closing the modal
+          });
+
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function(event) {
+              if (event.target == modal) {
+                  modal.style.display = "none";
+                  redirectTologin(); // Redirect to zoo after closing the modal
+              }
+          };
+      }
+  });
+}
 function animalEscaped() {
   // ממשו את הלוגיקה של חיה שבורחת מגן החיות
   animals.forEach(animal => {
       if (animalData.name === animal.name) {
           const animalindex = animals.indexOf(animal);
-          animals.splice(animalindex, 1);
+          const deletedanimal = animals.splice(animalindex, 1);
           localStorage.setItem('animals', JSON.stringify(animals));
-          localStorage.removeItem('chosenAnimal'); // Remove the chosen animal from local storage  
-        //      redirectToZoo(); // Redirect to zoo after closing the modal
+          localStorage.removeItem('chosenAnimal'); // Remove the chosen animal from local storage
+
+          // Get the modal element
+          let modal = document.getElementById("runModal");
+
+          // When the user clicks on the button, open the modal
+          modal.style.display = "block";
+
+          // Get the <span> element that closes the modal
+          let closebtn = document.querySelector(".closerunbutton");
+           
+          // Get the <p> element where you want to add the animal name
+          let messageParagraph = document.querySelector("#runModal .modal-body p");
+
+         // Set the text content of the <p> element to include the animal name
+          messageParagraph.textContent = `Oh no !🙀 the ${animalData.name} ran away!`;
+          // When the user clicks on <span> (x) or the "Close" button, close the modal
+          closebtn.addEventListener("click", function() {
+              modal.style.display = "none";
+              redirectToZoo(); // Redirect to zoo after closing the modal
+          });
+
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function(event) {
+              if (event.target == modal) {
+                  modal.style.display = "none";
+                  redirectToZoo(); // Redirect to zoo after closing the modal
+              }
+          };
       }
   });
 }
-////משנה עכשיו אם לא עובד זה בוורד
-function showModal(title, message) {
-  window.dialog.showModal();
-  //const modal = document.getElementById("myModal");
-  const modalTitle = document.getElementById("modalTitle");
-  const modalMessage = document.getElementById("modalMessage");
-  modalTitle.textContent = title;
-  modalMessage.textContent = message;
- // modal.style.display = "block";
-
-  //const closebtn = document.querySelector(".closebutton");
-  //closebtn.addEventListener("click", function () {
-   // modal.style.display = "none";
-  //});
-
- // window.onclick = function (event) {
-  //  if (event.target == modal) {
-   //   modal.style.display = "none";
-   // }
-  //};
+//////לבדוק איך אני משתמשת בפונקציות האלה שקיימות בדפים אחרים !!
+redirectToZoo=()=>{
+  window.location.href="./zoo.html"
 }
-
-function feedAnimal() {
-  
-  const numofcoins = playerData.coins;
-  if (numofcoins <= 0) {
-    if (animalData.isPredator === true) {
-      showModal("Oh no! 🙀", `The ${animalData.name} ate your player!`);
-      visitorGotEaten();
-      setTimeout(() => {
-        redirectToLogin(); // Redirect to login page after a delay
-      }, 3000);
-    } else {
-      showModal("Oh no!", `The ${animalData.name} ran away!`);
-      animalEscaped();
-      setTimeout(() => {
-        redirectToZoo(); // Redirect to login page after a delay
-      }, 3000);
-    }
-  } else {
-    playerData.coins -= 2;
-    localStorage.setItem("player", JSON.stringify(playerData));
-    updateNavbar();
-    showModal("Hey 🤍", `Thank you for feeding the ${animalData.name}!`);
-    AddFedAnimal();
-  }
+redirectToLogin=()=>{
+  window.location.href="./login.html"
 }
-
+///////////////////////////////////////////
 console.log(playerData)
   if(playerData===null)
  { location.href="./login.html"}
-
-
+else{
+// Set the content of the element with the class "chosenplayer"
+document.querySelector(".chosenplayer").textContent = playerData.name+' '+playerData.coins;
+}
 
 
    
