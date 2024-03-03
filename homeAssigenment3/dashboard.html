@@ -5,12 +5,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
+    <link href="./dashboard.css" rel="stylesheet" />
     <script src="./main.js"></script>
     <link href="./main.css" rel="stylesheet" />
   </head>
   <body>
-    <div id="visited-animals"><h1>VISITED:</h1></div>
-    <div id="feeded-animals"><h1>FED:</h1></div>
+    <div id="myGraph">
+      <table class="graph">
+        <caption>
+          The animals you visited :
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Animal</th>
+            <th scope="col">Number of Visits</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="height: 85%" id="Lion">
+            <th scope="Lion">Lion</th>
+            <td><span id="number"></span></td>
+          </tr>
+          <tr style="height: 23%" id="Elephant">
+            <th scope="row">Elephant</th>
+            <td><span id="number"></span></td>
+          </tr>
+          <tr style="height: 7%" id="Giraffe">
+            <th scope="row">Giraffe</th>
+            <td><span id="number"></span></td>
+          </tr>
+          <tr style="height: 38%" id="Tiger">
+            <th scope="row">Tiger</th>
+            <td><span id="number"></span></td>
+          </tr>
+          <tr style="height: 35%" id="Monkey">
+            <th scope="row">Monkey</th>
+            <td><span id="number"></span></td>
+          </tr>
+          <tr style="height: 30%" id="Kangaroo">
+            <th scope="row">Kangaroo</th>
+            <td><span id="number"></span></td>
+          </tr>
+          <tr style="height: 5%" id="Penguin">
+            <th scope="row">Penguin</th>
+            <td><span id="number"></span></td>
+          </tr>
+          <tr style="height: 20%" id="Zebra">
+            <th scope="row">Zebra</th>
+            <td><span id="number"></span></td>
+          </tr>
+          <tr style="height: 20%" id="Cheetah">
+            <th scope="row">Cheetah</th>
+            <td><span id="number"></span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <h1>Animals you fed:</h1>
+    <ol id="fed-animal-list" class="list"></ol>
+
     <div id="favorite-animal"></div>
     <script src="./dashboard.js"></script>
   </body>

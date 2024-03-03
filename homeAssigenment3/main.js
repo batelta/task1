@@ -372,9 +372,11 @@ function addNavBar() {
   "/C:/Users/batel/OneDrive/Desktop/course/homeAssigenment3/dashboard.html"
 */
 if (
-  ["/animal.html", "/zoo.html", "/dashboard.html"].includes(
-    window.location.pathname
-  )
+  [
+    "/homeAssigenment3/animal.html",
+    "/homeAssigenment3/zoo.html",
+    "/homeAssigenment3/dashboard.html",
+  ].includes(window.location.pathname)
 ) {
   document.addEventListener("DOMContentLoaded", function () {
     addNavBar();
