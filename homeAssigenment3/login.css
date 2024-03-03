@@ -3,14 +3,13 @@
 body {
     background-position: center;
     padding: 90px 150px;
-    background: url(./zooimage2.jpg)no-repeat ;
-
+    background-image: url("https://i.pinimg.com/564x/f2/c2/75/f2c275bf840c4ca21538b2dbc95c5224.jpg");
     background-position: center center;
     background-size: cover;   
     padding:20%;
     font-family: "Poppins", sans-serif;
   }
-  
+
   #placeholder {
     display: flex;
     margin: 0 auto;
@@ -31,16 +30,14 @@ body {
   width:200px;
 }
 .card{
-  box-shadow: 2px 8px 11px grey;
-  border: 70px;
-  border-radius: 33%;}
+  box-shadow: 1px 7px 10px darkgrey;
+}
 
 .visitors-card {
     max-width: 250px;
     max-height: 100px;
     overflow: hidden;
     background: white;
-
     border-radius: 20px;
     animation: fade-in 0.4s ease-in forwards;
   
@@ -56,12 +53,99 @@ body {
     width: 100%;
     max-width: 100%;
     object-fit: contain;
-    max-height: 100px;
-    margin: 7px 38px auto;
-        max-width: 150px;
+    max-height: 93px;
+    margin: 5px auto;
+    max-width: 154px;
+   
   }
 
   .card-text img{
     max-height: 30px;
     max-width: 30px;
   }
+
+
+
+.card-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+.card {
+    position: absolute;
+    top: 59%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 221px;
+    height: 315px;
+    background-image: url(./homeAssigenment3/card-background.jpg.jpeg);
+    background-size: cover;
+}
+.card .visitor-card {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.card .visitor-card img {
+    width: 100%;
+    transition: .5s;
+}
+.card:hover .visitor-card img {
+    opacity: .5;
+    transform: translateX(30%);
+}
+.card .details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    background: #DCF2F1;
+    transition: .5s;
+    transform-origin: left;
+    transform: perspective(2000px) rotateY(-90deg);
+}
+
+.card:hover .card-body {
+  transform: translateX(30%);
+}
+
+.card:hover .details {
+    transform: perspective(2000px) rotateY(0deg);
+}
+
+.chooseButton,#logout {
+  background-color: white;
+  color: #9cb3cc;
+  border: 2px solid #d8f5ea;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: translateY(110px);
+}
+
+.chooseButton:hover {
+  background-color: #bdd9f5;
+  color: white; 
+  transform: scale(1.1);
+  transform:translateY(100px);
+
+}
+
+#logout{
+  transform: translateY(-232px);
+
+  }
+
+
+#login-title{
+  left: 191px;
+  /* right: -183px; */
+  position: relative;
+  color:rgb(25, 26, 27);
+  font-family:"Poppins", sans-serif;
+  transform: translateY(-200px);
+}

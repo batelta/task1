@@ -1,50 +1,60 @@
-
-
-const visitors = JSON.parse(localStorage.getItem('visitors'));
 let visitorsForView = [...visitors];
-const dialog = document.querySelector("#visitors-dialog");
+
 
 const getVisitorsHTMLCard = (visitor) => {  //התבנית שבה נוכל לראות את הפרטים עבור כל משתמש 
     const template = `
         <div class="card" style="min-height:250px;" >
+        <div class="card-body">
           <img class="visitor-card" src="${visitor.image}" alt="${visitor.name}"/>
-          <div class="card-body">
             <p class="card-text">${visitor.name}</p>
             <p class="card-text">${visitor.coins} <img src="https://cdn-icons-png.freepik.com/256/8350/8350237.png" alt="coin-logo"></p>
           </div>
+          <div class="details">
+          <button class="chooseButton">Choose</button>
+        </div>
         </div>`;
   
+    
         const wrapper = document.createElement("div");
         wrapper.className = "visitor-card";
         wrapper.innerHTML = template;
-        wrapper.addEventListener("click", () => handleVisitorsClick(visitor));
+    
+       const chooseButton = wrapper.querySelector(".chooseButton");
+       chooseButton.addEventListener("click", (event) => {
+       checkLogin(visitor);
+    });
         return wrapper;
       };
 
-      const getCloseModalHTMLButton = () => {
-        const closeButton = document.createElement("button");
-        closeButton.innerText = " Close";
-        closeButton.addEventListener("click", () => dialog.close());
-        return closeButton;
-      };
-      const getselectuserModalHTMLButton=(visitor)=>{
-        const chooseButton=document.createElement("button");
-        chooseButton.innerText="Choose";
-        chooseButton.addEventListener("click",()=>redirectToZoo(visitor));
-        return chooseButton;
-      }
-      function redirectToZoo(visitor){
-        const chosenPlayer={name:visitor.name,coins:visitor.coins,image:visitor.image}
-        console.log(chosenPlayer);
-        loginAsVisitor(chosenPlayer);
-        window.location.href = "./zoo.html";
-      }
-      const handleVisitorsClick = (visitor) => {
-        dialog.innerHTML = "";
-        dialog.append(getCloseModalHTMLButton(),getselectuserModalHTMLButton(visitor), getVisitorsHTMLCard(visitor));
-        dialog.showModal();
-      };
+      
+    
 
+      function checkLogin(visitor) {
+        const currentUser = JSON.parse(localStorage.getItem('player'));
+        if (currentUser && currentUser.name === visitor.name) {
+            window.location.href = "./zoo.html"; // אם המשתמש הנוכחי זהה למשתמש המבוקש, פשוט המשך עם המשתמש הנוכחי
+        } else if (currentUser) {
+            alert("You are already logged in as " + currentUser.name + ". Please log out first to choose another user.");
+        } else {
+            //const chosenPlayer = { name: visitor.name, coins: visitor.coins, image: visitor.image }
+            //console.log(chosenPlayer);
+            loginAsVisitor(visitor);
+            updatePlayerFields(visitor);
+            redirectToZoo();
+        }
+    }
+    function updatePlayerFields(player) {
+      // Add visitedAnimals and fedAnimals fields if they don't exist
+      if (!player.visitedAnimals) {
+          player.visitedAnimals = [];
+      }
+      if (!player.fedAnimals) {
+          player.fedAnimals = [];
+      }
+      // Update the player object in local storage
+      localStorage.setItem('player', JSON.stringify(player));
+  }
+    
       const getSearchBox = () => {
         const queryInput = document.createElement("input");
         queryInput.id = "query-input";

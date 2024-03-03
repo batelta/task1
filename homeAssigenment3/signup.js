@@ -1,5 +1,4 @@
 
-const visitors = JSON.parse(localStorage.getItem('visitors'));
 
 /*   מקבל שם, בודק שאין אותו כבר במערך האורחים ומחזיר אובייקט אורח
 /** */  
@@ -7,7 +6,13 @@ const makeVisitor = (visitors, name,image) => {
   let foundVisitor = visitors.find((visitor) => visitor.name === name);
   console.log(foundVisitor); //בדיקה לעצמי , למחוק בסוף 
   if (!foundVisitor) {
-      let newVisitor = { name: name, coins: 50 ,image:image} // Use name parameter here
+    let newVisitor = {
+      name: name,
+      coins: 50,
+      image: image,
+      visitedAnimals: [], // Initialize visitedAnimals array
+      fedAnimals: [] // Initialize fedAnimals array
+    };
       console.log(newVisitor)//בדיקה לעצמי , למחוק בסוף 
      
       visitors.push(newVisitor);
@@ -17,7 +22,8 @@ const makeVisitor = (visitors, name,image) => {
       console.log(storedVisitors);
 
       localStorage.setItem('player', JSON.stringify(newVisitor));// שומרת אותו באחסון המקומי בתור שחקן נוכחי
-  const chosenplayer = JSON.parse(localStorage.getItem('player'));
+      
+      const chosenplayer = JSON.parse(localStorage.getItem('player'));
   console.log(chosenplayer)//בדיקה 
   }
   else {

@@ -1,0 +1,146 @@
+/*navbar related*/
+.chosenplayer {
+    margin-left: 0px;
+    font-weight: bold;
+    visibility: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    background: #C6DCBA;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    flex-direction: row-reverse;
+    border-radius: 0px 7px 7px 0px;
+}
+.fa-navicon:before, .fa-reorder:before, .fa-bars:before {
+    position: relative;
+    left:0px;
+    left: -32px;
+}
+
+.u-name {
+    font-size: 20px;
+    position:relative;
+    left: 0px;
+    padding: 0px;
+}
+
+.u-name b {
+    color: #D7E4C0;
+}
+
+.header i {
+    font-size: 30px;
+    cursor: pointer;
+    color: #262931;
+}
+
+.header i:hover {
+    color: #D7E4C0;
+}
+
+.user-p {
+    text-align: center;
+    padding-left: 10px;
+    padding-top: 25px;
+}
+
+.user-p img {
+    width: 100px;
+    border-radius: 50%;
+    visibility: hidden;
+}
+
+.user-p h4 {
+    color: #262931;
+    padding: 5px 0;
+}
+
+.side-bar {
+    width: 60px;
+    position: absolute;
+    left: 0px;
+    top: 80px;
+    background: #C6DCBA;
+    min-height: 0vh;
+    transition: 500ms width;
+    border-radius: 0px 7px 7px 0px;
+
+}
+#players li {
+    padding: 21px 0px 3px 0px;}
+.body {
+    display: flex;
+}
+
+.side-bar ul {
+    margin-top: 1px;
+        list-style: none;
+        margin-left: -40px;
+}
+
+.side-bar ul li {
+    font-size: 16px;
+    padding: 15px 0px;
+    padding-left: 55px;
+    transition: 500ms background;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  
+}
+
+.side-bar ul li:hover {
+    background: #D7E4C0;
+}
+
+.side-bar ul li a {
+    text-decoration: none;
+    color: #262931;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.side-bar ul li a i {
+    display: inline-block;
+    padding-right: 10px;
+    font-size: 23px;
+    position: relative;
+    left: -36px;}
+
+#navbtn {
+    display: inline-block;
+    margin-left: 70px;
+    font-size: 20px;
+    transition: 500ms color;
+}
+
+#checkbox {
+    display: none;
+}
+
+#checkbox:checked ~ .body .side-bar {
+    width: 250px;
+}
+
+#checkbox:checked ~ .body .side-bar .user-p {
+    visibility:visible;
+}
+#checkbox:checked ~ .body .side-bar .user-p img {
+    visibility:visible;
+}
+#checkbox:checked ~ .body .side-bar .user-p .chosenplayer{
+    visibility:visible;
+}
+
+
+.hidden{
+    display: none;
+  
+  }
+  

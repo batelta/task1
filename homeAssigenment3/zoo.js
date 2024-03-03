@@ -10,8 +10,8 @@ console.log("visitors: ", visitors);//בדיקה
 console.log("animals: ", animals);//בדיקה
 console.log("playerData: ", playerData);//בדיקה
 
-let visitedAnimals = [];//מערך ריק שיכיל בעתיד את כל הח
-
+//let visitedAnimals = [];//מערך ריק שיכיל בעתיד את כל הח
+/*
 function visitAnimal(chosenAnimal) {
    // ממשו את הלוגיקה של מעבר לעמוד חיה עבור החיה הספציפית שנבחרה
   // שמרו בלוקל סטורג' את החיה שנבחרה, כך שבעמוד החיה נוכל לשלוף אותה מהסטורג' ולהציגה בהתאם
@@ -19,14 +19,21 @@ function visitAnimal(chosenAnimal) {
   AddVisitedAnimal(chosenAnimal);
   window.location.href = "./animal.html";
 }
+*/
+function visitAnimal(chosenAnimal) {
+  localStorage.setItem("chosenAnimal", JSON.stringify(chosenAnimal));
+  AddVisitedAnimal(chosenAnimal);
+  window.location.href = "./animal.html";
+}
 
 function AddVisitedAnimal(chosenAnimal) {
-  // Retrieve visitedAnimals from local storage and initialize it as an empty array if it doesn't exist
-  let visitedAnimals = JSON.parse(localStorage.getItem('visitedAnimals')) || [];
-
-  visitedAnimals.push(chosenAnimal);
-  localStorage.setItem("visitedAnimals", JSON.stringify(visitedAnimals));
+  //let visitedAnimals = JSON.parse(localStorage.getItem('visitedAnimals')) || [];
+  //visitedAnimals.push(chosenAnimal);
+  playerData.visitedAnimals.push(chosenAnimal);//מוסיפה את החיה שנבחרה למערך החיות שהשחקן הנבחר ביקר
+  localStorage.setItem("player", JSON.stringify(playerData));//מעדכנת את הערך בלוקל סטורג
 }
+
+
 
 
 function setFilter(event) {
@@ -138,23 +145,7 @@ const handleAnimalsClick = (animal) => {
   dialog.showModal();
 };
 
-/*const getSearchBox = () => {
-  const queryInput = document.createElement("input");
-  queryInput.id = "query-input";
-  queryInput.placeholder = "Search for an animal by name...";
-  queryInput.className = "form-control my-4";
-  queryInput.oninput = (e) => {
-    animalsForView = animals.filter(
-      (animal) =>
-        animal.name.toLowerCase().includes(e.target.value) ||
-        animal.name.toUpperCase().includes(e.target.value)
-    );
-    renderAnimals();
-  };
 
-  return queryInput;
-};
-*/
 const animalSearch = (animal, searchTerm) => {
   const filters = ["name", "weight", "height", "color", "habitat"];
 
@@ -229,28 +220,3 @@ let filteredAnimals = filterPlainArray(animals, filters);
 console.log("Filtered animals", filteredAnimals);
 console.log("filtered length:", filteredAnimals.length);
 
-//navbar related
-/*
-const toggler = document.querySelector('.toggler')
-const sidebar = document.querySelector('.sidebar')
-
-if (toggler && sidebar) {
-  // Both elements exist in the DOM
-  // Now you can proceed with your logic here
-  console.log('Both .toggler and .sidebar exist in the DOM');
-  // You can call your function here or perform any other action
-  // showFull();
-} else {
-  // At least one of the elements does not exist in the DOM
-  console.log('Either .toggler or .sidebar does not exist in the DOM');
-  // You may want to handle this case accordingly
-}
-console.log(toggler)
-const showFull = () => {
-    toggler.addEventListener('click', ()=> {
-        toggler.classList.toggle('active')
-        sidebar.classList.toggle('active')
-    })
-}
-
-showFull()*/
