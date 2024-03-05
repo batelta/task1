@@ -384,7 +384,7 @@ function addNavBar() {
 if (
   [
     "/task1/homeAssigenment3/animal.html",
-    "/C:/Users/batel/OneDrive/Desktop/course/homeAssigenment3/zoo.html",
+    "/task1/homeAssigenment3/zoo.html",
     "/task1/homeAssigenment3/dashboard.html",
   ].includes(window.location.pathname)
 ) {
