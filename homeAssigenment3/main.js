@@ -383,9 +383,9 @@ function addNavBar() {
 */
 if (
   [
-    "/homeAssigenment3/animal.html",
-    "/homeAssigenment3/zoo.html",
-    "/homeAssigenment3/dashboard.html",
+    "/task1/homeAssigenment3/animal.html",
+    "/task1/homeAssigenment3/zoo.html",
+    "/task1/homeAssigenment3/dashboard.html",
   ].includes(window.location.pathname)
 ) {
   document.addEventListener("DOMContentLoaded", function () {
