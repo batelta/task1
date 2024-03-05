@@ -57,7 +57,6 @@ function visitorGotEaten() {
       visitors.splice(index, 1);
       localStorage.setItem("visitors", JSON.stringify(visitors));
       localStorage.removeItem("player"); // Remove the chosen player from local storage
-      //  redirectTologin(); // Redirect to login after closing the modal
     }
   });
 }
@@ -70,30 +69,15 @@ function animalEscaped() {
       animals.splice(animalindex, 1);
       localStorage.setItem("animals", JSON.stringify(animals));
       localStorage.removeItem("chosenAnimal"); // Remove the chosen animal from local storage
-      //      redirectToZoo(); // Redirect to zoo after closing the modal
     }
   });
 }
-////משנה עכשיו אם לא עובד זה בוורד
 function showModal(title, message) {
   window.dialog.showModal();
-  //const modal = document.getElementById("myModal");
   const modalTitle = document.getElementById("modalTitle");
   const modalMessage = document.getElementById("modalMessage");
   modalTitle.textContent = title;
   modalMessage.textContent = message;
-  // modal.style.display = "block";
-
-  //const closebtn = document.querySelector(".closebutton");
-  //closebtn.addEventListener("click", function () {
-  // modal.style.display = "none";
-  //});
-
-  // window.onclick = function (event) {
-  //  if (event.target == modal) {
-  //   modal.style.display = "none";
-  // }
-  //};
 }
 
 function feedAnimal() {
@@ -106,7 +90,7 @@ function feedAnimal() {
         redirectToLogin(); // Redirect to login page after a delay
       }, 3000);
     } else {
-      showModal("Oh no!", `The ${animalData.name} ran away!`);
+      showModal("Oh no! 😭", `The ${animalData.name} ran away!`);
       animalEscaped();
       setTimeout(() => {
         redirectToZoo(); // Redirect to login page after a delay

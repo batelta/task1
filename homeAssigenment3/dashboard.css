@@ -1,6 +1,8 @@
 body {
   background-image: url(./Beautiful\ Landscape\ Wallpaper.jpg);
   background-size: cover;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
 }
 #myGraph {
   display: flex;
@@ -10,7 +12,7 @@ body {
 }
 .graph {
   margin-bottom: 1em;
-  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: normal;
   font-size: 100%;
   line-height: 150%;
@@ -27,6 +29,7 @@ body {
 
 .graph tbody th {
   text-align: right;
+  background-color: #fff0c69d;
 }
 table.graph,
 table.graph th,
@@ -44,6 +47,8 @@ table.graph td {
 
     .graph caption {
       display: block;
+      position: relative;
+      top: -30px;
     }
 
     .graph thead {
@@ -67,6 +72,7 @@ table.graph td {
         transparent 1px,
         transparent 20%
       );
+      background-color: #ffedbca4;
     }
 
     .graph tbody:before,
@@ -173,9 +179,14 @@ table.graph td {
   clear: both;
   counter-increment: list;
   padding-bottom: 4rem;
+  width: 110%;
   font-size: 1.1rem;
   line-height: 1.375;
   position: relative;
+  margin: 46px;
+  background: var(--highlight1)
+    linear-gradient(to bottom right, var(--highlight1) 25%, var(--highlight2));
+  border-radius: 25px;
 }
 
 .fedanimal:before {
@@ -230,4 +241,54 @@ h1 {
   text-align: center;
   font-size: 200%;
   font-weight: 400;
+}
+
+/* הגדרת האנימציה */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px); /* העברת ה-div למעלה קצת */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* העברת ה-div לתחתיתו */
+  }
+}
+
+/* הגדרות עיצוב עבור ה-div */
+#favorite-animal div,
+h1 {
+  opacity: 0; /* הפריכה של ה-div */
+  animation: fadeIn 2.5s ease-in-out forwards; /* השמת האנימציה על ה-div */
+  font-size: 23px;
+  background-color: #fff0c69d; /* הוספת הצבע הירוק בעת העברת העכבר מעל ה-elementים */
+  max-width: 700px; /* הגבול של הרוחב */
+  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px black;
+  position: relative;
+  bottom: 30px;
+  margin-top: 70px;
+  font-weight: 600;
+}
+caption {
+  opacity: 0; /* הפריכה של ה-div */
+  animation: fadeIn 2.5s ease-in-out forwards; /* השמת האנימציה על ה-div */
+  font-size: 23px;
+  background-color: #fff0c69d; /* הוספת הצבע הירוק בעת העברת העכבר מעל ה-elementים */
+  max-width: 700px; /* הגבול של הרוחב */
+  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px black;
+  margin-top: 20px;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.fedanimal,
+h1 {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.graph {
+  animation: fadeIn 0.5s ease-in-out forwards;
 }

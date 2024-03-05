@@ -3,7 +3,7 @@
 body {
   background-position: center;
   padding: 90px 150px;
-  background-image: url("https://i.pinimg.com/564x/f2/c2/75/f2c275bf840c4ca21538b2dbc95c5224.jpg");
+  background-image: url("./Beautiful\ Landscape\ Wallpaper.jpg");
   background-position: center center;
   background-size: cover;
   padding: 20%;
@@ -75,7 +75,7 @@ body {
   transform: translate(-50%, -50%);
   width: 221px;
   height: 315px;
-  background-image: url(./homeAssigenment3/card-background.jpg.jpeg);
+  background-image: url(./card-background.jpg);
   background-size: cover;
 }
 .card .visitor-card {
@@ -97,7 +97,7 @@ body {
   left: 0;
   width: 70%;
   height: 100%;
-  background: #dcf2f1;
+  background: #c6dcba;
   transition: 0.5s;
   transform-origin: left;
   transform: perspective(2000px) rotateY(-90deg);
@@ -114,8 +114,8 @@ body {
 .chooseButton,
 #logout {
   background-color: white;
-  color: #9cb3cc;
-  border: 2px solid #d8f5ea;
+  color: #405734;
+  border: 2px solid #405734;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
@@ -124,21 +124,27 @@ body {
 }
 
 .chooseButton:hover {
-  background-color: #bdd9f5;
+  background-color: #869c79;
   color: white;
   transform: scale(1.1);
   transform: translateY(100px);
 }
-
+#logout:hover {
+  background-color: #869c79;
+  color: white;
+}
 #logout {
   transform: translateY(-232px);
 }
 
 #login-title {
-  left: 191px;
-  /* right: -183px; */
+  text-align: center;
   position: relative;
-  color: rgb(25, 26, 27);
+  color: rgb(27, 37, 26);
   font-family: "Poppins", sans-serif;
   transform: translateY(-200px);
+  letter-spacing: 0.05em;
+  text-shadow: -15px 5px 20px #ced0d3;
+
+  font-size: 4rem;
 }

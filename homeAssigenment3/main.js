@@ -274,6 +274,7 @@ function updateNavbar() {
   // Store the updated visitors array back into local storage
   localStorage.setItem("visitors", JSON.stringify(visitors));
 }
+audioElement = new Audio("./audio-background.mp3"); //checking
 
 // Create header elements
 function addNavBar() {
@@ -304,6 +305,12 @@ function addNavBar() {
         <i class="fa fa-user" aria-hidden="true"></i>
         <span class="showplayers">All players</span>
           <ul id="players" class="showlist hidden"></ul>
+      </a>
+    </li>
+    <li>
+    <a href="#" id="playAudio">
+    <i class="fa fa-music" aria-hidden="true"></i>
+        <span>Play Audio</span>
       </a>
     </li>
     <li>
@@ -358,6 +365,9 @@ function addNavBar() {
   showPlayers.addEventListener("click", togglePlayersList);
 
   document.body.appendChild(wrapper);
+
+  const playMusic = wrapper.querySelector("#playAudio");
+  playMusic.addEventListener("click", playAudio);
   // Get the reset settings link element
   const resetSettingsLink = wrapper.querySelector("#resetSettings");
   resetSettingsLink.addEventListener("click", reset);
@@ -395,6 +405,15 @@ redirectToLogin = () => {
 ///////////////////////////////////////////
 
 /////////////////////////
+
+function playAudio() {
+  // Create an audio element if it doesn't exist
+  audioElement = new Audio("./audio-background.mp3");
+
+  // Start playing the audio
+  audioElement.play();
+}
+
 // כשלוחצים על כפתור הריסט נעבור לדף הרשמה
 function reset() {
   localStorage.clear(); // Clear all items from local storage
@@ -402,9 +421,7 @@ function reset() {
 }
 
 function logOut() {
-  // const playerData = JSON.parse(localStorage.getItem('player'));
-  //localStorage.clear(); // Clear all items from local storage
-  localStorage.removeItem("player"); // Attempt to remove the item
+  localStorage.removeItem("player"); //מחיקת השחקן הנוכחי מהלוקל סטורג'
 
   window.location.href = "./signup.html";
 }

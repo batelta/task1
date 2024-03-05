@@ -6,28 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Animal</title>
     <link href="./animal.css" rel="stylesheet">
-    <link href="./zoo.css" rel="stylesheet">
     <link href="./main.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="./main.js"></script>
 
   </head>
   <body>
-
+    
     <dialog  id="dialog" >
-    <!---<svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px"viewBox="0 0 448 512"><path d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"/></svg> -->            
-     
-    <h2 id="modalTitle"></strong></h2> 
-            <p id="modalMessage"></p>
-            <button onclick="window.dialog.close();" aria-label="close" class="x">❌</button>          </div>
+      <!---<svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px"viewBox="0 0 448 512"><path d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"/></svg> -->            
+       
+      <h2 id="modalTitle"></strong></h2> 
+              <p id="modalMessage"></p>
+              <button onclick="window.dialog.close();" aria-label="close" class="x">✖️</button>          </div>
+    
+      </dialog>
   
-    </dialog>
-     
-      
+   
+   
     <div class="animalpic">
       <img id="animal-image" src="" alt="Animal Image">
-        <!-- show here the animal image -->
-        <div class="animaldetails">
+      <div class="animaldetails">
         <h1 id="name"></h1>
         <h3>weight:</h3>
         <p id="weight"></p>
@@ -41,9 +40,16 @@
         <p id="isPredator"></p>
         <button id="feed-animal" onclick="feedAnimal()">Feed me</button>
     </div>
-
-    <div id="related-animals"></div>
+    <div class="carousel-container">
+      <h1>Related Animals:</h1>
+      <div class="related-animals" id="related-animals">
+    <!---<div id="related-animals"></div>-->  
+  </div>
+</div>
+</div>
+</div>
     <script src="./animal.js"></script>
+
    <!--<script src="./zoo.js"></script>--> 
   
 

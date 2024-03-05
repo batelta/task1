@@ -2,21 +2,22 @@
   display: flex;
   flex-direction: column;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  width: 38%;
+  width: 44%;
   position: absolute;
   top: 50px;
-  right: 0px;
+  right: -90px;
   border-radius: 7px 2px 2px 7px;
 }
-/*img {
-  width: 100px;
-  height: 30px;
-  //max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  margin: 0 auto;
+.animalpic {
+  position: relative;
+  top: 20px;
 }
-*/
+#name {
+  text-align: center;
+  background-color: #62a67763;
+  box-shadow: 1px 2px 4px black;
+}
+
 .animal-container {
   display: flex;
 }
@@ -29,36 +30,22 @@ h3 {
 }
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
 body {
-  font-family: "Ubuntu", sans-serif;
-  background: #fdddd8;
-}
-button {
-  align-items: center;
-  background-color: #87e4a3;
-  background-image: linear-gradient(1deg, #b4f0b8, #558455cf 99%);
-  background-size: calc(100% + 20px) calc(100% + 20px);
-  border-radius: 100px;
-  border-width: 0;
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 1rem;
-  height: auto;
-  line-height: 1.5;
-  padding: 6px 20px;
-  position: relative;
-  user-select: none;
+  font-family: "Poppins", sans-serif;
+  background-image: url(./ourbackground.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 90px 150px;
+  padding-top: 60px;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 button:active,
 button:focus {
   outline: none;
 }
-
-button:hover {
-  background-position: -20px -20px;
-}
-
-/*trying plz work*/
 
 /*Dialog Styles*/
 :root {
@@ -110,7 +97,7 @@ button {
   display: inline-block;
   font-size: 0.8rem;
   color: #fff !important;
-  background-color: #87e4a3;
+  background-image: linear-gradient(1deg, #b4f0b8, #558455cf 99%);
   padding: 13px 25px;
   border-radius: 17px;
   transition: background-color 0.1s ease;
@@ -118,6 +105,8 @@ button {
   transition: all 0.25s ease;
   border: 0;
   cursor: pointer;
+  font-size: 90%;
+  font-weight: 600;
   box-shadow: 0 10px 20px -10px #62a677;
   &:hover {
     box-shadow: 0 20px 20px -10px #94ffb6;
@@ -132,4 +121,45 @@ button {
   to {
     opacity: 1;
   }
+}
+
+.related-animals {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  scrollbar-width: thin;
+  gap: 20px; /* Adjust the gap between cards */
+  scrollbar-color: #61806a transparent;
+  transition: transform 0.5s ease;
+}
+
+.animal-carousel::-webkit-scrollbar {
+  width: 10px;
+}
+
+.related-animals::-webkit-scrollbar-thumb {
+  background-color: #bce0c7;
+}
+.animal-card {
+  height: 220px;
+  background: #c6dcbaad;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  padding: 10px;
+  border-radius: 40px;
+  display: inline-table;
+  flex-direction: column;
+  text-align: center;
+  width: 230px; /* רוחב של הכרטיס */
+  border: 6px solid #222c2600; /* גבול */
+  margin: 10px; /* מרווח בין הכרטיסיות */
+}
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  top: 150px;
+  left: 0px;
+  padding-bottom: 10px;
+  text-align: center;
 }

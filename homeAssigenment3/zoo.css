@@ -1,17 +1,12 @@
-#animalList {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .card {
-  width: 150px; /* רוחב של הכרטיס */
-  border: 8px #ffffff4e; /* גבול */
-  margin: 10px; /* מרווח בין הכרטיסיות */
-  border-radius: 134px; /* כיתוב פינות */
-  overflow: hidden; /* הסתרת תוכן שחורג מחוץ לגבולות הכרטיס */
-  box-shadow: 0 4px 8px rgba(36, 34, 34, 0.1); /* הצללה */
-  background-color: #e7e7e700; /* רקע לכרטיס */
-  transition: transform 0.5s ease-in-out; /* אנימציה של תנועה */
+  width: 150px;
+  border: 8px #ffffff4e;
+  margin: 10px;
+  border-radius: 134px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(36, 34, 34, 0.1);
+  background-color: #e7e7e700;
+  transition: transform 0.5s ease-in-out;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -19,18 +14,13 @@
   align-items: center;
 }
 .card:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 .card img {
-  width: 55%;
+  width: 56%;
   height: auto;
 }
-.card-text {
-  font-size: 200%;
-  margin: 10px;
-  text-align: center;
-  font-weight: 500;
-}
+
 .card-body {
   padding: 15px;
 }
@@ -49,29 +39,19 @@
   border-radius: 5px;
   border: 1px solid #ccc;
 }
-.btn {
-  background-color: #007bff;
-  color: rgb(162, 136, 136);
-  padding: 8px 12px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-#filter-button {
+
+#filter-button,
+#clear-button {
   background-color: #68cb4de4;
   color: white;
-  padding: 10px;
+  padding: 11px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
-#clear-filter-btn {
-  margin-top: 10px;
-}
-
-#filters {
-  margin-top: 20px;
+#clear-button {
+  background-color: rgb(243, 109, 109);
 }
 
 /* עיצוב לכל פילטר או שדה חיפוש */
@@ -80,50 +60,144 @@
 }
 
 body {
-  font-family: "Arial", sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0;
-  background: url(./bgtry.jpeg) no-repeat;
-  background-image: url("https://i.pinimg.com/564x/f2/c2/75/f2c275bf840c4ca21538b2dbc95c5224.jpg");
+  background: url(./ourbackground.jpg) no-repeat;
   background-size: cover;
   background-position: center;
   background-repeat: 2;
   background-attachment: fixed;
   padding: 90px 150px;
   padding-top: 60px;
+  display: flex;
 }
-
+.form {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.chooseAnimal:hover {
+  box-shadow: 0 20px 20px -10px #94ffb6;
+  cursor: pointer;
+}
 #placeholder {
   display: flex;
   justify-content: space-evenly;
-  margin: 0 auto;
+  margin: 15px auto;
   gap: 15px;
   flex-wrap: wrap;
 }
 
-.animals-card {
-  max-width: 100px;
-  max-height: 100px;
-  overflow: hidden;
-  background: white;
-  border-radius: 20px;
-  animation: fade-in 0.4s ease-in forwards;
+label,
+#search-filter,
+#weight-filter,
+#height-filter,
+#color-filter,
+#habitat-filter {
+  font-size: 20px;
 }
 
-.animals-card p {
+#search-filter,
+#weight-filter,
+#height-filter,
+#color-filter,
+#habitat-filter {
+  padding: 10px;
+  width: 90px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #f8f8f8;
+  background-image: url("https://example.com/search-icon.png"); /* כתובת ה-URL של סמל החיפוש או תמונת רקע אחרת */
+  background-position: 10px 10px; /* מיקום התמונה בתיבת החיפוש */
+  background-repeat: no-repeat;
+  padding-left: 3px; /* גודל הרווח משמאל לסמל החיפוש */
+  transition: width 0.3s ease-in-out; /* אנימציה של מעבר העכבר מעל התיבה */
+}
+
+#search-filter,
+#weight-filter,
+#height-filter,
+#color-filter,
+#habitat-filter:focus {
+  width: 120px;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 45px;
+  margin-top: 20px;
+}
+
+.label-card {
+  display: block;
+  width: 300px;
+  height: 200px;
+  position: relative;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 600ms;
+}
+
+.card div {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
   text-align: center;
-  padding: 2px 6px;
+  line-height: 200px;
+  border-radius: 2px;
+  backface-visibility: hidden;
 }
 
-.animals-card img {
-  width: 100px;
-  height: 30px;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  margin: 0 auto;
+.front,
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  backface-visibility: hidden;
 }
 
-.card-text img {
-  max-height: 30px;
-  max-width: 30px;
+.back {
+  transform: rotateX(180deg);
+
+  opacity: 0;
+  visibility: hidden;
+  background: #c6dcbaad;
+}
+.card:hover .front {
+  transform: rotateX(-180deg);
+}
+
+.card:hover .back {
+  opacity: 1;
+  visibility: visible;
+  transform: rotateX(0deg);
+}
+
+.chooseAnimal {
+  display: block;
+  position: relative;
+  top: 41%;
+  left: 36%;
+  background-color: white;
+  color: #acc2a1;
+  border: 2px solid #9cb190;
+  padding: 10px 20px;
+}
+
+.input-card {
+  display: none;
 }

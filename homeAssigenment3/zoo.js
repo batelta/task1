@@ -82,37 +82,34 @@ if (!playerData) {
 }
 
 let animalsForView = [...animals];
-const dialog = document.querySelector("#animal-dialog");
-
+//const dialog = document.querySelector("#animal-dialog");
 window.getAnimalsHTMLCard = (animal) => {
   //התבנית שבה נוכל לראות את הפרטים עבור כל משתמש
   const template = `
-        <div class="card" style="min-height: 360px;" >
-          <img class="animal-card" src="${animal.image}" alt="${animal.name}"/>
-          <div class="card-body">
-            <p class="card-text">${animal.name}</p>
+  <label class="label-card">
+  <input class="input-card" type="checkbox" />
+  <div class="card">
+      <div class="front">
+          <img class="animal-card" src="${animal.image}" alt="${animal.name}" />
+      
+      </div>
+      <div class="back">
+      <button href="#" class="chooseAnimal">Choose</button>
           </div>
-        </div>`;
+  </div>
+</label>`;
 
   const wrapper = document.createElement("div");
   wrapper.className = "animal-card";
   wrapper.innerHTML = template;
-  wrapper.addEventListener("click", () => handleAnimalsClick(animal));
+
+  const chooseAnimalButton = wrapper.querySelector(".chooseAnimal");
+  chooseAnimalButton.addEventListener("click", () => {
+    console.log("hi");
+    event.preventDefault(); // Prevent default anchor behavior (e.g., navigating to a new page)
+    redirectToAnimal(animal);
+  });
   return wrapper;
-};
-
-const getCloseModalHTMLButton = () => {
-  const closeButton = document.createElement("button");
-  closeButton.innerText = " Close";
-  closeButton.addEventListener("click", () => dialog.close());
-  return closeButton;
-};
-
-const getselectanimalModalHTMLButton = (animal) => {
-  const chooseButton = document.createElement("button");
-  chooseButton.innerText = "Choose";
-  chooseButton.addEventListener("click", () => redirectToAnimal(animal));
-  return chooseButton;
 };
 
 function redirectToAnimal(animal) {
@@ -129,16 +126,6 @@ function redirectToAnimal(animal) {
   visitAnimal(chosenAnimal);
 }
 
-const handleAnimalsClick = (animal) => {
-  dialog.innerHTML = "";
-  dialog.append(
-    getCloseModalHTMLButton(),
-    getAnimalsHTMLCard(animal),
-    getselectanimalModalHTMLButton(animal)
-  );
-  dialog.showModal();
-};
-
 const animalSearch = (animal, searchTerm) => {
   const filters = ["name", "weight", "height", "color", "habitat"];
 
@@ -152,15 +139,11 @@ const getEmptyCardsHTMLTemplate = () => {
   templateWrapper.className = "empty-result";
 
   const template = `
-          <h2>No Products Found</h2>
-          <p>We're sorry, but no products match your search or filter criteria.</p>
-          <button id="clear-filter-btn" class="btn btn-dark">Clear search text</button>
+          <h2>No Animals Found</h2>
+          <p>We're sorry, but no animals match your search or filter criteria.</p>
           `;
-  templateWrapper.innerHTML = template;
-  templateWrapper.children["clear-filter-btn"].addEventListener(
-    "click",
-    clearSearchBox
-  );
+
+  clearSearchBox;
   return templateWrapper;
 };
 
@@ -182,7 +165,6 @@ const renderAnimals = () => {
   animalsPlaceholder.append(...animalsCards);
 };
 
-//document.body.insertAdjacentElement("afterbegin", getSearchBox());
 window.addEventListener("load", renderAnimals);
 
 const getValue = (value) =>
