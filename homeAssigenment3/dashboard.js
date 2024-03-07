@@ -37,10 +37,10 @@ function findAnimalDetails(animalName) {
   console.log(foundAnimal);
   if (foundAnimal) {
     const detailsString = `
-      Weight: ${foundAnimal.weight} 
-      Height: ${foundAnimal.height}
-      Color: ${foundAnimal.color}
-      Habitat: ${foundAnimal.habitat}
+      Weight: ${foundAnimal.weight} ;
+      Height: ${foundAnimal.height} ;
+      Color: ${foundAnimal.color} ;
+      Habitat: ${foundAnimal.habitat} ;
       Is Predator: ${foundAnimal.isPredator ? "Yes" : "No"}
     `;
     return detailsString;

@@ -141,9 +141,14 @@ const getEmptyCardsHTMLTemplate = () => {
   const template = `
           <h2>No Animals Found</h2>
           <p>We're sorry, but no animals match your search or filter criteria.</p>
+          <button id="clear-filter-btn" class="btn btn-dark">Clear search text</button>
           `;
+  templateWrapper.innerHTML = template;
+  templateWrapper.children["clear-filter-btn"].addEventListener(
+    "click",
+    clearSearchBox
+  );
 
-  clearSearchBox;
   return templateWrapper;
 };
 

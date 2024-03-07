@@ -130,7 +130,7 @@ function generateDataset() {
       height: 120,
       color: "brown",
       habitat: "land",
-      image: "./lion bg.png",
+      image: "./lion.png",
     },
     {
       name: "Elephant",
@@ -377,15 +377,16 @@ function addNavBar() {
 }
 
 /*
-"/C:/Users/batel/OneDrive/Desktop/course/homeAssigenment3/animal.html",
-  "/C:/Users/batel/OneDrive/Desktop/course/homeAssigenment3/zoo.html",
-  "/C:/Users/batel/OneDrive/Desktop/course/homeAssigenment3/dashboard.html"
+"
 */
 if (
   [
     "/task1/homeAssigenment3/animal.html",
     "/task1/homeAssigenment3/zoo.html",
     "/task1/homeAssigenment3/dashboard.html",
+    "/C:/Users/batel/OneDrive/Desktop/course/homeAssigenment3/animal.html",
+    "/C:/Users/batel/OneDrive/Desktop/course/homeAssigenment3/zoo.html",
+    "/C:/Users/batel/OneDrive/Desktop/course/homeAssigenment3/dashboard.html",
   ].includes(window.location.pathname)
 ) {
   document.addEventListener("DOMContentLoaded", function () {

@@ -77,9 +77,12 @@ body {
   gap: 6px;
 }
 .chooseAnimal:hover {
-  box-shadow: 0 20px 20px -10px #94ffb6;
+  box-shadow: 0 20px 20px -10px #effff4;
+  background-color: #dcf4ce;
+
   cursor: pointer;
 }
+
 #placeholder {
   display: flex;
   justify-content: space-evenly;
@@ -139,7 +142,9 @@ label,
   perspective: 1000px;
   cursor: pointer;
 }
-
+.empty-result {
+  background-color: #c6dcba;
+}
 .card {
   position: absolute;
   width: 100%;
