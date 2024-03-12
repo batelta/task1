@@ -5,21 +5,6 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-image: url(https://img.freepik.com/premium-vector/zoo-cartoon-illustration-with-safari-animals-forest-background_2175-4776.jpg);
-  background: url(https://cdn2.vectorstock.com/i/1000x1000/60/91/zoo-entrance-gates-cartoon-with-safari-animals-vector-38946091.jpg)
-    no-repeat;
-  background: url(./zooimage.jpg) no-repeat;
-  background: url(https://i.pinimg.com/736x/50/78/e8/5078e890dae358be83ac3b0277ad6125.jpg)
-    no-repeat;
-
-  background-position: center center;
-  background-size: cover;
-}
 
 .form-container h1 {
   font-size: 36px;
@@ -134,7 +119,7 @@ body {
   margin: -20px 0 50px;
   background-image: url(https://images.unsplash.com/photo-1500993855538-c6a99f437aa7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);
   background: url(./zooimage.jpg) no-repeat;
-
+  background: url(./ourbackground2.jpg);
   background-size: cover;
 }
 .container {
