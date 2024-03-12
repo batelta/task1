@@ -148,3 +148,9 @@ body {
 
   font-size: 4rem;
 }
+
+@media (max-width: 770px) {
+  #logout {
+    transform: translateY(-200px);
+  }
+}
