@@ -208,12 +208,15 @@ body {
     width: 60%;
     position: static;
     /* margin: 6%; */
-    margin-left: 0%;
+    margin-left: -9%;
   }
   .form-container form {
-    margin-left: -17%;
+    margin-left: -21%;
     margin-top: 4%;
     height: 58%;
-    width: 72%;
+    width: 53%;
+  }
+  .gender {
+    gap: 10px;
   }
 }
